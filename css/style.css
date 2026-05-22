@@ -808,19 +808,17 @@ nav.scrolled {
 /* Sticky section header for calculator tools */
 .section.active > .section-header {
   position: sticky;
-  top: 68px;
-  z-index: 5;
+  top: 76px;
+  z-index: 10;
   background: var(--bg-primary);
-  padding-top: 16px !important;
-  padding-bottom: 16px;
+  padding-top: 14px !important;
+  padding-bottom: 14px;
   margin-bottom: 16px;
   border-bottom: 1px solid var(--border-glass);
-  transition: all var(--transition-normal);
 }
 
 .section.active > .section-header h1 {
   font-size: 1.35rem;
-  transition: font-size var(--transition-normal);
 }
 
 .section.active > .section-header p {
@@ -830,9 +828,9 @@ nav.scrolled {
 
 @media (max-width: 768px) {
   .section.active > .section-header {
-    top: 60px;
-    padding-top: 12px !important;
-    padding-bottom: 12px;
+    top: 66px;
+    padding-top: 10px !important;
+    padding-bottom: 10px;
   }
   .section.active > .section-header h1 {
     font-size: 1.15rem;
