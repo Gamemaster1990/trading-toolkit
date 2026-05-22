@@ -44,4 +44,11 @@
     <priority>0.4</priority>
   </url>
 
+  <!-- 404 Error Page -->
+  <url>
+    <loc>https://tradingtoolkit.com/404.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.1</priority>
+  </url>
+
 </urlset>

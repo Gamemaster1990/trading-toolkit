@@ -104,6 +104,29 @@
       <h1>About Us</h1>
       <p class="last-updated">Learn more about Trading Toolkit</p>
 
+      <!-- Author Credentials (YMYL / E-E-A-T) -->
+      <div class="calc-card" style="margin-bottom:32px;">
+        <div style="display:flex;align-items:flex-start;gap:20px;flex-wrap:wrap;">
+          <div style="flex-shrink:0;width:80px;height:80px;border-radius:50%;background:var(--gradient-primary);display:flex;align-items:center;justify-content:center;font-size:2rem;color:#fff;font-weight:800;box-shadow:0 0 30px rgba(0,212,255,0.25);">
+            TT
+          </div>
+          <div style="flex:1;min-width:200px;">
+            <h3 style="margin-bottom:4px;">Meet the Creator</h3>
+            <p style="font-size:1.1rem;font-weight:600;color:var(--text-primary);margin-bottom:4px;">Himanshu Kathuria</p>
+            <p style="color:var(--accent-cyan);font-size:0.85rem;font-weight:500;margin-bottom:10px;">Founder &amp; Trading Enthusiast</p>
+            <p style="color:var(--text-secondary);font-size:0.88rem;line-height:1.6;">
+              With over 5 years of experience in financial markets, Himanshu brings practical trading knowledge and a passion for data-driven decision making. He created Trading Toolkit to help fellow traders access professional-grade risk management tools without the high costs of institutional software.
+            </p>
+            <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;">
+              <span class="tool-tag cyan">&#x1F4CA; Data &amp; Analytics</span>
+              <span class="tool-tag gold">&#x1F4B1; Risk Management</span>
+              <span class="tool-tag purple">&#x1F4D6; Market Education</span>
+              <span class="tool-tag green">&#x1F4C8; Portfolio Optimization</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <h2>Our Mission</h2>
       <p>Trading Toolkit was created with a simple mission: to provide free, professional-grade trading calculators and educational resources to traders of all experience levels. We believe that access to quality trading tools should not be a barrier to becoming a successful trader.</p>
 
@@ -124,6 +147,19 @@
         <li><strong>Privacy:</strong> All calculations are performed locally in your browser. We never store your trading data.</li>
         <li><strong>Free Access:</strong> Our tools will always be free to use, supported by advertisements.</li>
       </ul>
+
+      <h2>Our Expertise</h2>
+      <p>Trading Toolkit's calculators and educational content are built on industry-standard financial formulas, verified against leading trading platforms and financial literature. Our tools reflect practical market experience and are designed with the following principles:</p>
+      <ul>
+        <li><strong>Practical Experience:</strong> Tools are designed based on real-world trading scenarios and risk management practices used by professional traders.</li>
+        <li><strong>Continuous Improvement:</strong> We regularly update our tools based on user feedback and evolving market best practices.</li>
+        <li><strong>Educational Focus:</strong> Every calculator includes detailed explanations so users understand the underlying concepts, not just the numbers.</li>
+        <li><strong>Community-Driven:</strong> We actively engage with our user community to understand their needs and improve our offerings.</li>
+      </ul>
+
+      <div class="tip-box">
+        <strong>&#x1F4A1; Our Commitment:</strong> We are committed to providing accurate, reliable, and educational tools for the trading community. While our tools are built with care and verified against industry standards, they are educational resources only. Always verify calculations independently and consult a qualified financial advisor before making trading decisions.
+      </div>
 
       <h2>Disclaimer</h2>
       <p>Trading Toolkit is an educational resource only. We are not financial advisors, and the information provided on this website should not be considered financial advice. Always consult with a qualified financial professional before making investment decisions.</p>
@@ -161,6 +197,79 @@
     </div>
   </footer>
 
+  <script src="js/config.js"></script>
   <script src="js/calculators.js"></script>
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-consent-banner" class="cookie-consent-overlay" role="dialog" aria-label="Cookie consent" aria-describedby="cookie-consent-text">
+    <div class="cookie-consent-inner">
+      <div class="cookie-consent-text">
+        <p>We use cookies to enhance your experience and show personalized ads. By clicking "Accept All", you consent to our use of cookies. See our <a href="privacy-policy.html">Privacy Policy</a> for details.</p>
+      </div>
+      <div class="cookie-consent-actions">
+        <button class="cookie-btn cookie-btn-reject" onclick="rejectAllCookies()">Reject All</button>
+        <button class="cookie-btn cookie-btn-customize" onclick="openCookiePreferences()">Customize</button>
+        <button class="cookie-btn cookie-btn-accept" onclick="acceptAllCookies()">Accept All</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Preferences Modal -->
+  <div id="cookie-preferences-modal" class="cookie-modal-overlay" role="dialog" aria-modal="true" aria-label="Cookie preferences">
+    <div class="cookie-modal">
+      <h3>Cookie Preferences</h3>
+      <p>Customize which cookies you allow. Essential cookies are always enabled as they are required for the website to function properly.</p>
+      
+      <div class="cookie-preference">
+        <div>
+          <div class="cookie-preference-label">Essential Cookies</div>
+          <div class="cookie-preference-desc">Required for basic site functionality</div>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" checked disabled>
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+      
+      <div class="cookie-preference">
+        <div>
+          <div class="cookie-preference-label">Advertising Cookies</div>
+          <div class="cookie-preference-desc">Used by Google AdSense to serve relevant ads</div>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" id="cookie-ad-storage" checked>
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+      
+      <div class="cookie-preference">
+        <div>
+          <div class="cookie-preference-label">Personalized Ads</div>
+          <div class="cookie-preference-desc">Allows Google to show personalized ads based on your interests</div>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" id="cookie-ad-personalization">
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+      
+      <div class="cookie-preference">
+        <div>
+          <div class="cookie-preference-label">Analytics Cookies</div>
+          <div class="cookie-preference-desc">Help us understand how visitors use our site</div>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" id="cookie-analytics-storage">
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+      
+      <div class="cookie-modal-actions">
+        <button class="btn btn-secondary" onclick="rejectAllCookies()">Reject All</button>
+        <button class="btn btn-primary" onclick="saveCookiePreferences()">Save Preferences</button>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>

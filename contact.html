@@ -167,6 +167,79 @@
     </div>
   </footer>
 
+  <script src="js/config.js"></script>
   <script src="js/calculators.js"></script>
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-consent-banner" class="cookie-consent-overlay" role="dialog" aria-label="Cookie consent" aria-describedby="cookie-consent-text">
+    <div class="cookie-consent-inner">
+      <div class="cookie-consent-text">
+        <p>We use cookies to enhance your experience and show personalized ads. By clicking "Accept All", you consent to our use of cookies. See our <a href="privacy-policy.html">Privacy Policy</a> for details.</p>
+      </div>
+      <div class="cookie-consent-actions">
+        <button class="cookie-btn cookie-btn-reject" onclick="rejectAllCookies()">Reject All</button>
+        <button class="cookie-btn cookie-btn-customize" onclick="openCookiePreferences()">Customize</button>
+        <button class="cookie-btn cookie-btn-accept" onclick="acceptAllCookies()">Accept All</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Preferences Modal -->
+  <div id="cookie-preferences-modal" class="cookie-modal-overlay" role="dialog" aria-modal="true" aria-label="Cookie preferences">
+    <div class="cookie-modal">
+      <h3>Cookie Preferences</h3>
+      <p>Customize which cookies you allow. Essential cookies are always enabled as they are required for the website to function properly.</p>
+      
+      <div class="cookie-preference">
+        <div>
+          <div class="cookie-preference-label">Essential Cookies</div>
+          <div class="cookie-preference-desc">Required for basic site functionality</div>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" checked disabled>
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+      
+      <div class="cookie-preference">
+        <div>
+          <div class="cookie-preference-label">Advertising Cookies</div>
+          <div class="cookie-preference-desc">Used by Google AdSense to serve relevant ads</div>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" id="cookie-ad-storage" checked>
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+      
+      <div class="cookie-preference">
+        <div>
+          <div class="cookie-preference-label">Personalized Ads</div>
+          <div class="cookie-preference-desc">Allows Google to show personalized ads based on your interests</div>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" id="cookie-ad-personalization">
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+      
+      <div class="cookie-preference">
+        <div>
+          <div class="cookie-preference-label">Analytics Cookies</div>
+          <div class="cookie-preference-desc">Help us understand how visitors use our site</div>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" id="cookie-analytics-storage">
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+      
+      <div class="cookie-modal-actions">
+        <button class="btn btn-secondary" onclick="rejectAllCookies()">Reject All</button>
+        <button class="btn btn-primary" onclick="saveCookiePreferences()">Save Preferences</button>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>

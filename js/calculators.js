@@ -1337,3 +1337,149 @@ document.addEventListener('DOMContentLoaded', function() {
     
   }, 100);
 });
+
+
+// ===========================
+// Cookie Consent (GDPR / Google Consent Mode v2)
+// ===========================
+
+var COOKIE_CONSENT_KEY = 'tt-cookie-consent';
+
+function getCookieConsent() {
+  try {
+    var saved = localStorage.getItem(COOKIE_CONSENT_KEY);
+    return saved ? JSON.parse(saved) : null;
+  } catch (e) {
+    return null;
+  }
+}
+
+function saveCookieConsent(preferences) {
+  localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(preferences));
+  updateConsentMode(preferences);
+}
+
+function updateConsentMode(preferences) {
+  // Google Consent Mode v2 integration
+  if (typeof gtag !== 'undefined') {
+    gtag('consent', 'update', {
+      'ad_storage': preferences.ad_storage || 'denied',
+      'ad_user_data': preferences.ad_user_data || 'denied',
+      'ad_personalization': preferences.ad_personalization || 'denied',
+      'analytics_storage': preferences.analytics_storage || 'denied'
+    });
+  }
+  
+  // Set default consent for Google tags
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('consent', 'update', {
+    'ad_storage': preferences.ad_storage || 'denied',
+    'ad_user_data': preferences.ad_user_data || 'denied',
+    'ad_personalization': preferences.ad_personalization || 'denied',
+    'analytics_storage': preferences.analytics_storage || 'denied'
+  });
+}
+
+function showCookieBanner() {
+  var banner = document.getElementById('cookie-consent-banner');
+  if (banner) {
+    banner.classList.add('visible');
+  }
+}
+
+function hideCookieBanner() {
+  var banner = document.getElementById('cookie-consent-banner');
+  if (banner) {
+    banner.classList.remove('visible');
+    // Remove from DOM after transition
+    setTimeout(function() {
+      if (banner) banner.style.display = 'none';
+    }, 500);
+  }
+}
+
+function acceptAllCookies() {
+  saveCookieConsent({
+    ad_storage: 'granted',
+    ad_user_data: 'granted',
+    ad_personalization: 'granted',
+    analytics_storage: 'granted',
+    timestamp: new Date().toISOString()
+  });
+  hideCookieBanner();
+  showToast('Cookies accepted. Thank you!', 'success');
+}
+
+function rejectAllCookies() {
+  saveCookieConsent({
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'denied',
+    timestamp: new Date().toISOString()
+  });
+  hideCookieBanner();
+  showToast('Privacy preferences saved.', 'info');
+}
+
+function openCookiePreferences() {
+  var modal = document.getElementById('cookie-preferences-modal');
+  if (modal) {
+    modal.classList.add('active');
+  }
+}
+
+function closeCookiePreferences() {
+  var modal = document.getElementById('cookie-preferences-modal');
+  if (modal) {
+    modal.classList.remove('active');
+  }
+}
+
+function saveCookiePreferences() {
+  var adStorage = document.getElementById('cookie-ad-storage');
+  var adPersonalization = document.getElementById('cookie-ad-personalization');
+  var analyticsStorage = document.getElementById('cookie-analytics-storage');
+  
+  saveCookieConsent({
+    ad_storage: adStorage && adStorage.checked ? 'granted' : 'denied',
+    ad_user_data: adStorage && adStorage.checked ? 'granted' : 'denied',
+    ad_personalization: adPersonalization && adPersonalization.checked ? 'granted' : 'denied',
+    analytics_storage: analyticsStorage && analyticsStorage.checked ? 'granted' : 'denied',
+    timestamp: new Date().toISOString()
+  });
+  
+  closeCookiePreferences();
+  hideCookieBanner();
+  showToast('Preferences saved!', 'success');
+}
+
+function initCookieConsent() {
+  // Set default consent to denied initially (before user makes choice)
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+  
+  // Check for existing consent
+  var existing = getCookieConsent();
+  if (existing) {
+    updateConsentMode(existing);
+  } else {
+    // Show banner after a brief delay
+    setTimeout(showCookieBanner, 1000);
+  }
+}
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initCookieConsent);
+} else {
+  initCookieConsent();
+}
+
