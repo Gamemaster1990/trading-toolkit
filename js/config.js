@@ -5,9 +5,9 @@
    =========================== */
 
 var SITE_CONFIG = {
-  // Current live URL (update when you get a custom domain)
-  domain: 'gamemaster1990.github.io',
-  basePath: '/trading-toolkit',
+  // Live domain
+  domain: 'tradingtoolkit.online',
+  basePath: '',
   
   // Google AdSense Publisher ID - update when you get yours
   adsenseId: 'ca-pub-XXXXXXXXXXXXXXXX',
