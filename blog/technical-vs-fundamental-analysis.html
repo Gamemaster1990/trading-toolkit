@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A comprehensive comparison of technical analysis vs fundamental analysis for trading. Learn when to use each method and how combining them can give you an edge.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#060a15">
+  <link rel="canonical" href="https://tradingtoolkit.online/blog/technical-vs-fundamental-analysis.html">
+
+  <meta property="og:title" content="Technical Analysis vs Fundamental Analysis: Which One Should You Use?">
+  <meta property="og:description" content="A comprehensive comparison of technical analysis vs fundamental analysis. Learn which approach suits your trading style.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://tradingtoolkit.online/blog/technical-vs-fundamental-analysis.html">
+  <meta property="og:site_name" content="Trading Toolkit">
+  <meta property="og:image" content="https://tradingtoolkit.online/og-image.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Technical Analysis vs Fundamental Analysis: Which One Should You Use?">
+  <meta name="twitter:description" content="A comprehensive comparison of technical vs fundamental analysis for traders.">
+
+  <title>Technical Analysis vs Fundamental Analysis: Which One Should You Use? | Trading Toolkit</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2300d4ff'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%23fff' font-size='18' font-weight='bold' font-family='Inter'%3ETT%3C/text%3E%3C/svg%3E">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Technical Analysis vs Fundamental Analysis: Which One Should You Use?",
+    "description": "A comprehensive comparison of technical analysis vs fundamental analysis for trading. Learn when to use each method.",
+    "author": {"@type": "Person", "name": "Himanshu Kathuria"},
+    "publisher": {"@type": "Organization", "name": "Trading Toolkit", "url": "https://tradingtoolkit.online/"},
+    "datePublished": "2026-05-21",
+    "url": "https://tradingtoolkit.online/blog/technical-vs-fundamental-analysis.html"
+  }
+  </script>
+</head>
+<body>
+  <div class="animated-bg" aria-hidden="true"><div class="orb"></div><div class="orb"></div><div class="orb"></div><div class="orb"></div></div>
+  <div class="grid-overlay" aria-hidden="true"></div>
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand"><span class="logo-icon">TT</span> Trading Toolkit</a>
+      <button class="theme-toggle-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+        <svg class="sun-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg class="moon-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#tools-overview">Tools</a></li>
+        <li><a href="../blog.html" class="active">Blog</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="drawerOverlay" class="mobile-drawer-overlay" onclick="closeMobileDrawer()"></div>
+  <div id="mobileDrawer" class="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <span class="logo-icon">TT</span>
+      <button class="mobile-drawer-close" onclick="closeMobileDrawer()" aria-label="Close menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <ul class="mobile-drawer-links">
+      <li><a href="../index.html">&#x1F3E0; Home</a></li>
+      <li><a href="../blog.html" class="active">&#x1F4DD; Blog</a></li>
+      <li><a href="../about.html">&#x2139;&#xFE0F; About Us</a></li>
+      <li><a href="../contact.html">&#x1F4EC; Contact</a></li>
+    </ul>
+    <div class="mobile-drawer-footer">
+      <button class="theme-toggle-btn drawer-theme-btn" onclick="toggleTheme()"><span class="sun-text">Light Mode</span><span class="moon-text">Dark Mode</span></button>
+      <p style="color:var(--text-muted);font-size:0.8rem;padding:0 16px;">&copy; 2026 Trading Toolkit</p>
+    </div>
+  </div>
+
+  <div id="toast-container" class="toast-container"></div>
+
+  <div class="page-content">
+    <div class="container">
+      <a href="../blog.html" class="page-back">&#x2190; Back to Blog</a>
+      <div class="blog-article-header">
+        <div class="blog-article-tags">
+          <span class="tool-tag purple">Market Analysis</span>
+          <span class="tool-tag green">Beginner Friendly</span>
+        </div>
+        <h1>Technical Analysis vs Fundamental Analysis: Which One Should You Use?</h1>
+        <div class="blog-article-meta">
+          <span>By Himanshu Kathuria</span>
+          <span>&#x2022;</span>
+          <span>May 2026</span>
+          <span>&#x2022;</span>
+          <span>11 min read</span>
+        </div>
+      </div>
+
+      <div class="blog-article-content">
+        <h2>The Great Debate</h2>
+        <p>Every new trader faces the same question: <strong>Should I use technical analysis or fundamental analysis?</strong> It's one of the most debated topics in trading, with passionate advocates on both sides.</p>
+        <p>The truth is, neither approach is inherently superior — they serve different purposes and work best in different contexts. The most successful traders often use a combination of both, leveraging the strengths of each method while compensating for their weaknesses.</p>
+        <p>In this guide, we'll break down both approaches, compare their strengths and weaknesses, and help you decide which one (or which combination) is right for your trading style.</p>
+
+        <h2>What Is Technical Analysis?</h2>
+        <p><strong>Technical analysis</strong> is the study of historical price and volume data to predict future price movements. Technical analysts (or chartists) believe that all relevant information about a stock is already reflected in its price, so they focus on patterns, trends, and indicators rather than company fundamentals.</p>
+
+        <h3>Key Tools of Technical Analysis</h3>
+        <ul>
+          <li><strong>Price Charts:</strong> Line charts, bar charts, and candlestick charts showing price action</li>
+          <li><strong>Support and Resistance:</strong> Price levels where buying or selling pressure historically emerges</li>
+          <li><strong>Trend Lines:</strong> Lines connecting higher lows (uptrend) or lower highs (downtrend)</li>
+          <li><strong>Chart Patterns:</strong> Head and shoulders, double tops/bottoms, flags, triangles, wedges</li>
+          <li><strong>Indicators:</strong> Moving averages, RSI, MACD, Bollinger Bands, Stochastic Oscillator</li>
+          <li><strong>Volume Analysis:</strong> Trading volume confirms or contradicts price movements</li>
+          <li><strong>Candlestick Patterns:</strong> Doji, hammer, engulfing patterns, morning/evening stars</li>
+        </ul>
+
+        <h3>When Technical Analysis Works Best</h3>
+        <ul>
+          <li><strong>Short-term trading:</strong> Day trading, swing trading (days to weeks)</li>
+          <li><strong>Liquid markets:</strong> Stocks, forex, and crypto with high trading volume</li>
+          <li><strong>Range-bound markets:</strong> When prices oscillate between known support/resistance levels</li>
+          <li><strong>Trending markets:</strong> Clear directional movement with pullbacks to trend lines</li>
+        </ul>
+
+        <div class="tip-box">
+          <strong>&#x1F4A1; Key Concept:</strong> Technical analysis is based on three core assumptions: (1) Price discounts everything, (2) Price moves in trends, and (3) History tends to repeat itself. If you don't believe these premises, technical analysis may not be right for you.
+        </div>
+
+        <h2>What Is Fundamental Analysis?</h2>
+        <p><strong>Fundamental analysis</strong> evaluates the intrinsic value of an asset by examining related economic, financial, and qualitative factors. Fundamental analysts believe that markets can misprice assets in the short term, but price eventually converges to intrinsic value.</p>
+
+        <h3>Key Tools of Fundamental Analysis</h3>
+        <ul>
+          <li><strong>Financial Statements:</strong> Income statement, balance sheet, cash flow statement</li>
+          <li><strong>Valuation Ratios:</strong> P/E ratio, P/B ratio, P/S ratio, EV/EBITDA, Dividend Yield</li>
+          <li><strong>Growth Metrics:</strong> Revenue growth, earnings growth, EPS growth rate</li>
+          <li><strong>Profitability Metrics:</strong> Gross margin, operating margin, net margin, ROE, ROA</li>
+          <li><strong>Debt Metrics:</strong> Debt-to-equity ratio, interest coverage ratio</li>
+          <li><strong>Macroeconomic Data:</strong> GDP growth, interest rates, inflation, unemployment</li>
+          <li><strong>Industry Analysis:</strong> Market size, competitive landscape, regulatory environment</li>
+          <li><strong>Management Quality:</strong> CEO track record, corporate governance, insider ownership</li>
+        </ul>
+
+        <h3>When Fundamental Analysis Works Best</h3>
+        <ul>
+          <li><strong>Long-term investing:</strong> Holding periods of months to years</li>
+          <li><strong>Value investing:</strong> Finding undervalued companies with strong fundamentals</li>
+          <li><strong>Growth investing:</strong> Identifying companies with sustainable competitive advantages</li>
+          <li><strong>Market downturns:</strong> Separating fundamentally strong companies from weak ones during selloffs</li>
+        </ul>
+
+        <h2>Head-to-Head Comparison</h2>
+
+        <div class="calc-card" style="margin:20px 0;">
+          <h3 style="margin-bottom:16px;">Technical vs Fundamental: Key Differences</h3>
+          <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;font-size:0.88rem;">
+              <thead>
+                <tr style="border-bottom:1px solid var(--border-glass);">
+                  <th style="text-align:left;padding:10px 12px;color:var(--accent-cyan);">Aspect</th>
+                  <th style="text-align:left;padding:10px 12px;color:var(--accent-gold);">Technical Analysis</th>
+                  <th style="text-align:left;padding:10px 12px;color:var(--accent-purple);">Fundamental Analysis</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom:1px solid var(--border-glass);">
+                  <td style="padding:10px 12px;font-weight:600;">Time Horizon</td>
+                  <td style="padding:10px 12px;color:var(--text-secondary);">Short to medium (days to weeks)</td>
+                  <td style="padding:10px 12px;color:var(--text-secondary);">Medium to long (months to years)</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border-glass);">
+                  <td style="padding:10px 12px;font-weight:600;">Data Source</td>
+                  <td style="padding:10px 12px;color:var(--text-secondary);">Price, volume, chart patterns</td>
+                  <td style="padding:10px 12px;color:var(--text-secondary);">Financial statements, economic data</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border-glass);">
+                  <td style="padding:10px 12px;font-weight:600;">Skill Level</td>
+                  <td style="padding:10px 12px;color:var(--text-secondary);">Lower barrier; charts are visual</td>
+                  <td style="padding:10px 12px;color:var(--text-secondary);">Higher barrier; financial literacy needed</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border-glass);">
+                  <td style="padding:10px 12px;font-weight:600;">Subjectivity</td>
+                  <td style="padding:10px 12px;color:var(--text-secondary);">Moderate (patterns can be ambiguous)</td>
+                  <td style="padding:10px 12px;color:var(--text-secondary);">Moderate (different valuation models)</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border-glass);">
+                  <td style="padding:10px 12px;font-weight:600;">Best Market</td>
+                  <td style="padding:10px 12px;color:var(--text-secondary);">Trending, ranging, high liquidity</td>
+                  <td style="padding:10px 12px;color:var(--text-secondary);">All markets, especially volatile periods</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border-glass);">
+                  <td style="padding:10px 12px;font-weight:600;">Time Investment</td>
+                  <td style="padding:10px 12px;color:var(--text-secondary);">Minutes to hours per day</td>
+                  <td style="padding:10px 12px;color:var(--text-secondary);">Hours to days per analysis</td>
+                </tr>
+                <tr>
+                  <td style="padding:10px 12px;font-weight:600;">Edge Type</td>
+                  <td style="padding:10px 12px;color:var(--text-secondary);">Timing entries/exits</td>
+                  <td style="padding:10px 12px;color:var(--text-secondary);">Finding mispriced assets</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <h2>Strengths and Weaknesses</h2>
+
+        <h3>Technical Analysis Strengths</h3>
+        <ul>
+          <li><strong>Excellent timing:</strong> Pinpoints precise entry and exit points</li>
+          <li><strong>Works in any timeframe:</strong> From 1-minute charts to weekly charts</li>
+          <li><strong>Applicable across markets:</strong> Use the same tools for stocks, forex, crypto, futures</li>
+          <li><strong>Quantifiable risk management:</strong> Stop losses and targets are clear and precise</li>
+          <li><strong>Real-time feedback:</strong> Immediate confirmation or invalidation of your analysis</li>
+        </ul>
+
+        <h3>Technical Analysis Weaknesses</h3>
+        <ul>
+          <li><strong>Can be self-fulfilling:</strong> Many traders watching the same levels can create false moves</li>
+          <li><strong>Subject to noise:</strong> Short-term price movements can be random and misleading</li>
+          <li><strong>Doesn't explain why:</strong> Technical analysis tells you what is happening, not why</li>
+          <li><strong>Indicator lag:</strong> Most indicators are based on past data and inherently lag</li>
+        </ul>
+
+        <h3>Fundamental Analysis Strengths</h3>
+        <ul>
+          <li><strong>Provides context:</strong> Understands the business or asset behind the price</li>
+          <li><strong>Long-term edge:</strong> Identifies sustainable competitive advantages</li>
+          <li><strong>Contrarian opportunities:</strong> Buy when fear creates undervaluation</li>
+          <li><strong>Risk awareness:</strong> Understands the real risks facing a business</li>
+        </ul>
+
+        <h3>Fundamental Analysis Weaknesses</h3>
+        <ul>
+          <li><strong>Poor timing:</strong> A stock can remain undervalued for months or years</li>
+          <li><strong>Data lag:</strong> Financial reports are published weeks after quarter-end</li>
+          <li><strong>Information overload:</strong> Too many metrics can lead to analysis paralysis</li>
+          <li><strong>Misses market sentiment:</strong> Fundamentals don't capture fear, greed, or momentum</li>
+        </ul>
+
+        <h2>The Best of Both Worlds: Combining Technical and Fundamental Analysis</h2>
+        <p>The most successful traders don't choose one approach — they use both in a complementary way. Here's a framework for combining them:</p>
+
+        <h3>The Top-Down Approach</h3>
+        <ol>
+          <li><strong>Start with fundamentals</strong> to identify quality assets with strong long-term potential</li>
+          <li><strong>Use technical analysis</strong> to find the optimal entry point on those assets</li>
+          <li><strong>Set technical stop losses</strong> at key support levels to manage risk</li>
+          <li><strong>Use fundamental checkpoints</strong> to hold through volatility (earnings reports, economic data)</li>
+        </ol>
+
+        <h3>Practical Example</h3>
+        <p>Let's say you're interested in a technology stock:</p>
+        <ol>
+          <li><strong>Fundamental screening:</strong> The company has strong revenue growth (20% YoY), healthy margins (60% gross), low debt (0.3 D/E), and a reasonable P/E ratio (18x vs industry 25x)</li>
+          <li><strong>Technical timing:</strong> The stock has pulled back to its 50-day moving average, RSI is at 35 (oversold), and a bullish engulfing candlestick pattern has formed</li>
+          <li><strong>Risk management:</strong> Place a stop loss 5% below entry at the recent swing low. Position size to risk only 1% of your account</li>
+          <li><strong>Fundamental monitoring:</strong> Hold through minor volatility as long as the fundamental story remains intact</li>
+        </ol>
+
+        <div class="tip-box">
+          <strong>&#x1F4A1; Pro Strategy:</strong> Use fundamental analysis to build a watchlist of quality assets, then use technical analysis to time your entries. This combines the "what to buy" strength of fundamentals with the "when to buy" strength of technical analysis.
+        </div>
+
+        <h2>Which Approach Is Right for You?</h2>
+        <p>Consider these factors when deciding where to focus your learning:</p>
+
+        <h3>Choose Technical Analysis If:</h3>
+        <ul>
+          <li>You prefer short-term trading (days to weeks)</li>
+          <li>You enjoy pattern recognition and visual analysis</li>
+          <li>You want clear, defined entry and exit rules</li>
+          <li>You have limited time for research each day</li>
+          <li>You trade multiple markets or instruments</li>
+        </ul>
+
+        <h3>Choose Fundamental Analysis If:</h3>
+        <ul>
+          <li>You prefer long-term investing (months to years)</li>
+          <li>You enjoy analyzing businesses and financial statements</li>
+          <li>You want to understand the "why" behind price movements</li>
+          <li>You have the patience to wait for value to be recognized</li>
+          <li>You focus on a specific sector or industry</li>
+        </ul>
+
+        <h3>Choose Both If:</h3>
+        <ul>
+          <li>You want to identify quality assets and time entries effectively</li>
+          <li>You have both the patience for fundamentals and the precision for technicals</li>
+          <li>You want a robust approach that works in multiple market conditions</li>
+        </ul>
+
+        <h2>Getting Started: Practical Steps</h2>
+
+        <h3>For Technical Analysis Beginners</h3>
+        <ol>
+          <li><strong>Learn candlestick basics</strong> — Understand open, high, low, close and common patterns</li>
+          <li><strong>Master support and resistance</strong> — The foundation of all technical analysis</li>
+          <li><strong>Add one or two indicators</strong> — Start with moving averages and RSI. Don't overload your charts</li>
+          <li><strong>Practice on a demo account</strong> — Apply your analysis in real-time without risking capital</li>
+          <li><strong>Use our calculators</strong> — Our <a href="../index.html#section-risk-reward" style="color:var(--accent-cyan);">Risk/Reward Calculator</a> helps quantify your technical analysis setups</li>
+        </ol>
+
+        <h3>For Fundamental Analysis Beginners</h3>
+        <ol>
+          <li><strong>Learn to read financial statements</strong> — Income statement, balance sheet, cash flow statement</li>
+          <li><strong>Start with one sector</strong> — Focus on understanding one industry deeply</li>
+          <li><strong>Compare competitors</strong> — Relative valuation is more useful than absolute valuation</li>
+          <li><strong>Follow earnings calls</strong> — Management guidance is often more important than past results</li>
+          <li><strong>Track macroeconomic trends</strong> — Interest rates, inflation, and GDP affect all companies</li>
+        </ol>
+
+        <h2>Conclusion: The Best Analysis Is the One You Use Consistently</h2>
+        <p>The debate between technical and fundamental analysis will continue as long as markets exist. But the most important factor isn't which method you choose — it's that you choose one and apply it consistently.</p>
+        <p>Both approaches can be profitable when used with discipline and proper risk management. The most common reason traders fail isn't choosing the "wrong" analysis method — it's abandoning their method when they hit a losing streak.</p>
+        <p><strong>Start simple, practice consistently, and always manage your risk.</strong> Whether you're reading a candlestick chart or analyzing a balance sheet, the key to success is the same: discipline, patience, and continuous learning.</p>
+
+        <hr style="border-color:var(--border-glass);margin:32px 0;">
+
+        <h2>Related Tools &amp; Articles</h2>
+        <div class="related-links">
+          <a href="../index.html#section-position-size" class="related-link">&#x1F4D0; Position Size Calculator</a>
+          <a href="../index.html#section-compounding" class="related-link">&#x1F4C8; Compounding Calculator</a>
+          <a href="../blog/position-sizing-guide.html" class="related-link">&#x1F4D0; Position Sizing Guide</a>
+          <a href="../blog/stop-loss-strategies.html" class="related-link">&#x1F6D1; Stop Loss Strategies</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4><span style="display:inline-flex;width:28px;height:28px;background:var(--gradient-primary);border-radius:6px;align-items:center;justify-content:center;font-size:0.8rem;color:#fff;font-weight:800;">TT</span> Trading Toolkit</h4>
+          <p>Free trading calculators and educational tools.</p>
+          <div class="last-updated-badge">&#x1F4C5; May 2026</div>
+        </div>
+        <div class="footer-col">
+          <h5>Tools</h5>
+          <a href="../index.html">Home</a>
+          <a href="../index.html#tools-overview">All Tools</a>
+        </div>
+        <div class="footer-col">
+          <h5>Resources</h5>
+          <a href="../blog.html">Blog</a>
+          <a href="../about.html">About Us</a>
+          <a href="../contact.html">Contact</a>
+          <a href="../disclaimer.html">Disclaimer</a>
+        </div>
+        <div class="footer-col">
+          <h5>Legal</h5>
+          <a href="../privacy-policy.html">Privacy Policy</a>
+          <a href="../terms.html">Terms of Use</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Trading Toolkit. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/calculators.js"></script>
+
+  <div id="cookie-consent-banner" class="cookie-consent-overlay" role="dialog" aria-label="Cookie consent">
+    <div class="cookie-consent-inner">
+      <div class="cookie-consent-text">
+        <p>We use cookies to enhance your experience. See our <a href="../privacy-policy.html">Privacy Policy</a>.</p>
+      </div>
+      <div class="cookie-consent-actions">
+        <button class="cookie-btn cookie-btn-reject" onclick="rejectAllCookies()">Reject All</button>
+        <button class="cookie-btn cookie-btn-accept" onclick="acceptAllCookies()">Accept All</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="cookie-preferences-modal" class="cookie-modal-overlay">
+    <div class="cookie-modal">
+      <h3>Cookie Preferences</h3>
+      <p>Customize your cookie settings.</p>
+      <div class="cookie-preference">
+        <div>
+          <div class="cookie-preference-label">Essential Cookies</div>
+          <div class="cookie-preference-desc">Required for basic functionality</div>
+        </div>
+        <label class="toggle-switch"><input type="checkbox" checked disabled><span class="toggle-slider"></span></label>
+      </div>
+      <div class="cookie-preference">
+        <div>
+          <div class="cookie-preference-label">Advertising Cookies</div>
+          <div class="cookie-preference-desc">Used by Google AdSense</div>
+        </div>
+        <label class="toggle-switch"><input type="checkbox" id="cookie-ad-storage" checked><span class="toggle-slider"></span></label>
+      </div>
+      <div class="cookie-preference">
+        <div>
+          <div class="cookie-preference-label">Personalized Ads</div>
+          <div class="cookie-preference-desc">Relevant ads based on interests</div>
+        </div>
+        <label class="toggle-switch"><input type="checkbox" id="cookie-ad-personalization"><span class="toggle-slider"></span></label>
+      </div>
+      <div class="cookie-modal-actions">
+        <button class="btn btn-secondary" onclick="rejectAllCookies()">Reject All</button>
+        <button class="btn btn-primary" onclick="saveCookiePreferences()">Save Preferences</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

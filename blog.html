@@ -3,28 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contact Trading Toolkit - Get in touch with questions, feedback, or support requests about our free trading calculators.">
+  <meta name="description" content="Educational trading articles and guides. Learn about position sizing, risk management, stop losses, and trading strategies at Trading Toolkit Blog.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#060a15">
-  <link rel="canonical" href="https://tradingtoolkit.online/contact.html">
+  <link rel="canonical" href="https://tradingtoolkit.online/blog.html">
 
-  <meta property="og:title" content="Contact Us - Trading Toolkit">
-  <meta property="og:description" content="Get in touch with the Trading Toolkit team for questions, feedback, or support.">
+  <meta property="og:title" content="Trading Blog - Trading Toolkit">
+  <meta property="og:description" content="Educational trading articles covering position sizing, risk management, stop loss strategies, and market analysis techniques.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://tradingtoolkit.online/contact.html">
+  <meta property="og:url" content="https://tradingtoolkit.online/blog.html">
   <meta property="og:site_name" content="Trading Toolkit">
+  <meta property="og:image" content="https://tradingtoolkit.online/og-image.png">
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Contact Us - Trading Toolkit">
-  <meta name="twitter:description" content="Get in touch with the Trading Toolkit team.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Trading Blog - Trading Toolkit">
+  <meta name="twitter:description" content="Educational trading articles and guides for traders of all levels.">
+  <meta name="twitter:image" content="https://tradingtoolkit.online/og-image.png">
 
-  <title>Contact Us - Trading Toolkit</title>
+  <title>Trading Blog - Educational Articles for Traders | Trading Toolkit</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2300d4ff'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%23fff' font-size='18' font-weight='bold' font-family='Inter'%3ETT%3C/text%3E%3C/svg%3E">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Trading Toolkit Blog",
+    "description": "Educational trading articles and guides for traders of all levels.",
+    "url": "https://tradingtoolkit.online/blog.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Trading Toolkit",
+      "url": "https://tradingtoolkit.online/"
+    }
+  }
+  </script>
 </head>
 <body>
   <div class="animated-bg" aria-hidden="true">
@@ -41,7 +58,6 @@
         <span class="logo-icon">TT</span>
         Trading Toolkit
       </a>
-
       <button class="theme-toggle-btn" onclick="toggleTheme()" aria-label="Toggle dark/light theme" title="Toggle theme">
         <svg class="sun-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
         <svg class="moon-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -52,13 +68,14 @@
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="index.html#tools-overview">Tools</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
-        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
   </nav>
 
+  <!-- Mobile Drawer -->
   <div id="drawerOverlay" class="mobile-drawer-overlay" onclick="closeMobileDrawer()"></div>
   <div id="mobileDrawer" class="mobile-drawer">
     <div class="mobile-drawer-header">
@@ -69,9 +86,9 @@
     </div>
     <ul class="mobile-drawer-links">
       <li><a href="index.html">&#x1F3E0; Home</a></li>
+      <li><a href="blog.html" class="active">&#x1F4DD; Blog</a></li>
       <li><a href="about.html">&#x2139;&#xFE0F; About Us</a></li>
-      <li><a href="contact.html" class="active">&#x1F4EC; Contact</a></li>
-      <li><a href="blog.html">&#x1F4DD; Blog</a></li>
+      <li><a href="contact.html">&#x1F4EC; Contact</a></li>
       <li><a href="disclaimer.html">&#x26A0;&#xFE0F; Disclaimer</a></li>
       <li><a href="privacy-policy.html">&#x1F6E1;&#xFE0F; Privacy</a></li>
       <li><a href="terms.html">&#x1F4D6; Terms</a></li>
@@ -86,54 +103,77 @@
     </div>
   </div>
 
+  <!-- Toast Container -->
   <div id="toast-container" class="toast-container"></div>
 
   <div class="page-content">
     <div class="container">
       <a href="index.html" class="page-back">&#x2190; Back to Home</a>
-      <h1>Contact Us</h1>
-      <p class="last-updated">We'd love to hear from you</p>
+      <h1>&#x1F4DD; Trading Blog</h1>
+      <p class="last-updated">Educational articles to help you become a better trader</p>
 
-      <p>We value your feedback. If you have questions, suggestions, or concerns, please reach out to us using the details below.</p>
-
-      <div class="contact-cards" style="margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-        <div class="calc-card" style="padding:24px;">
-          <div style="font-size:1.5rem;margin-bottom:8px;">&#x1F4EC;</div>
-          <h3 style="font-size:0.95rem;margin-bottom:8px;">Email Us</h3>
-          <p style="color:var(--text-secondary);font-size:0.9rem;">
-            <a href="mailto:gamemastergameplayss@gmail.com" style="color:var(--accent-cyan);text-decoration:none;font-weight:500;">
-              gamemastergameplayss@gmail.com
-            </a>
-          </p>
-          <p style="color:var(--text-muted);font-size:0.8rem;margin-top:4px;">We respond within 24-48 hours</p>
-
-        </div>
-
-        <div class="calc-card" style="padding:24px;">
-          <div style="font-size:1.5rem;margin-bottom:8px;">&#x1F310;</div>
-          <h3 style="font-size:0.95rem;margin-bottom:8px;">Website</h3>
-          <p style="color:var(--text-secondary);font-size:0.9rem;">
-            <a href="index.html" style="color:var(--accent-cyan);text-decoration:none;font-weight:500;">
-              tradingtoolkit.online
-            </a>
-          </p>
-          <p style="color:var(--text-muted);font-size:0.8rem;margin-top:4px;">Visit our calculator suite</p>
-        </div>
+      <div class="section-header" style="margin-bottom:32px;">
+        <p style="color:var(--text-secondary);font-size:0.95rem;max-width:600px;margin:0 auto;">
+          Explore our collection of educational trading articles covering risk management, position sizing, market analysis, and more.
+        </p>
       </div>
 
-      <div class="calc-card" style="padding:24px;margin-top:16px;">
-        <h3 style="font-size:0.95rem;margin-bottom:12px;">&#x1F4CB; Contact Information</h3>
-        <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:6px;">
-          <strong>Email:</strong> gamemastergameplayss@gmail.com
-        </p>
-        <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:6px;">
-          <strong>Website:</strong> tradingtoolkit.online
-        </p>
-        <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:6px;">
-          <strong>Response Time:</strong> 24-48 hours on business days
-        </p>
-        <p style="color:var(--text-muted);font-size:0.85rem;margin-top:12px;border-top:1px solid var(--border-color);padding-top:12px;">
-          For questions about our privacy practices, data handling, or advertising policies, please contact us via the email above. All communications are handled in accordance with our <a href="privacy-policy.html" style="color:var(--accent-cyan);text-decoration:none;">Privacy Policy</a>.
+      <!-- Blog Posts Grid -->
+      <div class="blog-posts-grid">
+        <!-- Article 1 -->
+        <a href="blog/position-sizing-guide.html" class="blog-card">
+          <div class="blog-card-image" style="background:linear-gradient(135deg, rgba(0,212,255,0.15), rgba(0,212,255,0.05));">
+            <div style="font-size:3rem;text-align:center;padding:20px 0;">&#x1F4D0;</div>
+          </div>
+          <div class="blog-card-content">
+            <div class="blog-card-meta">
+              <span class="tool-tag cyan">Risk Management</span>
+              <span class="blog-card-date">May 2026</span>
+            </div>
+            <h3>Understanding Position Sizing: The Key to Consistent Trading</h3>
+            <p>Learn how proper position sizing can transform your trading results. Discover the fixed percentage method, Kelly Criterion, and how our Position Size Calculator can help.</p>
+            <span class="blog-card-read-more">Read Article &#x2192;</span>
+          </div>
+        </a>
+
+        <!-- Article 2 -->
+        <a href="blog/stop-loss-strategies.html" class="blog-card">
+          <div class="blog-card-image" style="background:linear-gradient(135deg, rgba(239,68,68,0.12), rgba(239,68,68,0.04));">
+            <div style="font-size:3rem;text-align:center;padding:20px 0;">&#x1F6D1;</div>
+          </div>
+          <div class="blog-card-content">
+            <div class="blog-card-meta">
+              <span class="tool-tag gold">Risk Management</span>
+              <span class="blog-card-date">May 2026</span>
+            </div>
+            <h3>Stop Loss Strategies: Protecting Your Trading Capital</h3>
+            <p>Master the art of stop loss placement. From technical levels to volatility-based stops, explore proven strategies to protect your capital and maximize returns.</p>
+            <span class="blog-card-read-more">Read Article &#x2192;</span>
+          </div>
+        </a>
+
+        <!-- Article 3 -->
+        <a href="blog/technical-vs-fundamental-analysis.html" class="blog-card">
+          <div class="blog-card-image" style="background:linear-gradient(135deg, rgba(139,92,246,0.12), rgba(139,92,246,0.04));">
+            <div style="font-size:3rem;text-align:center;padding:20px 0;">&#x1F4CA;</div>
+          </div>
+          <div class="blog-card-content">
+            <div class="blog-card-meta">
+              <span class="tool-tag purple">Market Analysis</span>
+              <span class="blog-card-date">May 2026</span>
+            </div>
+            <h3>Technical Analysis vs Fundamental Analysis: Which One Should You Use?</h3>
+            <p>A comprehensive comparison of the two main trading approaches. Learn when to use each method and how combining them can give you an edge in the markets.</p>
+            <span class="blog-card-read-more">Read Article &#x2192;</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- More Articles Coming Soon -->
+      <div class="calc-card" style="margin-top:40px;text-align:center;">
+        <h3 style="justify-content:center;">&#x1F4AC; More Articles Coming Soon</h3>
+        <p style="color:var(--text-secondary);font-size:0.9rem;">
+          We're constantly adding new educational content. Check back soon for articles on options trading strategies, risk management techniques, portfolio diversification, and more.
         </p>
       </div>
     </div>

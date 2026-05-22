@@ -9,6 +9,32 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- Blog Home -->
+  <url>
+    <loc>https://tradingtoolkit.online/blog.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog Articles -->
+  <url>
+    <loc>https://tradingtoolkit.online/blog/position-sizing-guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://tradingtoolkit.online/blog/stop-loss-strategies.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://tradingtoolkit.online/blog/technical-vs-fundamental-analysis.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- About Page -->
   <url>
     <loc>https://tradingtoolkit.online/about.html</loc>
