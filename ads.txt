@@ -1,0 +1,13 @@
+# ════════════════════════════════════════════════════════
+# Google AdSense — ads.txt
+# ════════════════════════════════════════════════════════
+# 
+# To enable AdSense:
+# 1. Get your Publisher ID from https://adsense.google.com
+# 2. Replace "pub-XXXXXXXXXXXXXXXX" below with your actual ID
+# 3. Deploy this file to the root of your domain
+#
+# Example: google.com, pub-1234567890123456, DIRECT, f08c47fec0942fa0
+# ════════════════════════════════════════════════════════
+
+google.com, pub-YOUR_PUBLISHER_ID, DIRECT, f08c47fec0942fa0

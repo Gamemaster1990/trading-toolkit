@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free trading toolkit with position size calculator, risk reward calculator, compounding calculator, brokerage calculator, and option payoff chart. Educational tools for traders.">
+  <meta name="keywords" content="trading calculator, position size, risk reward, compounding, brokerage calculator, option payoff, trading tools">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Trading Toolkit">
+  <meta name="theme-color" content="#060a15">
+  <link rel="canonical" href="https://tradingtoolkit.com/">
+  
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Trading Toolkit - Free Calculator Suite for Traders">
+  <meta property="og:description" content="Professional-grade trading calculators to help you manage risk, calculate position sizes, analyze options, and grow your portfolio.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tradingtoolkit.com/">
+  <meta property="og:image" content="https://tradingtoolkit.com/og-image.png">
+  <meta property="og:site_name" content="Trading Toolkit">
+  
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Trading Toolkit - Free Calculator Suite for Traders">
+  <meta name="twitter:description" content="Professional-grade trading calculators to help you manage risk, calculate position sizes, analyze options, and grow your portfolio.">
+  <meta name="twitter:image" content="https://tradingtoolkit.com/og-image.png">
+  
+  <title>Trading Toolkit - Free Calculator Suite for Traders</title>
+  
+  <!-- Preconnect for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2300d4ff'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%23fff' font-size='18' font-weight='bold' font-family='Inter'%3ETT%3C/text%3E%3C/svg%3E">
+
+  <!-- JSON-LD Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Trading Toolkit",
+    "url": "https://tradingtoolkit.com/",
+    "description": "Free trading calculators and educational tools for traders of all levels.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://tradingtoolkit.com/?search={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Trading Toolkit",
+    "url": "https://tradingtoolkit.com/",
+    "logo": "https://tradingtoolkit.com/logo.png",
+    "description": "Free trading calculators and educational resources for traders."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tradingtoolkit.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Position Size Calculator", "item": "https://tradingtoolkit.com/#position-size" },
+      { "@type": "ListItem", "position": 3, "name": "Risk/Reward Calculator", "item": "https://tradingtoolkit.com/#risk-reward" },
+      { "@type": "ListItem", "position": 4, "name": "Compounding Calculator", "item": "https://tradingtoolkit.com/#compounding" },
+      { "@type": "ListItem", "position": 5, "name": "Brokerage Calculator", "item": "https://tradingtoolkit.com/#brokerage" },
+      { "@type": "ListItem", "position": 6, "name": "Option Payoff Chart", "item": "https://tradingtoolkit.com/#option-payoff" }
+    ]
+  }
+  </script>
+
+  <!-- ════════════════════════════════════════════════════════
+       Google AdSense — Auto Ads
+       ════════════════════════════════════════════════════════
+       To enable Auto Ads:
+       1. Sign in to https://adsense.google.com with your email
+       2. Get your Publisher ID (looks like: ca-pub-XXXXXXXXXXXXXXXX)
+       3. Uncomment the script below and replace the PUBLISHER_ID
+       4. Enable Auto Ads in your AdSense dashboard
+       
+       Auto Ads will then automatically place ads in optimal
+       positions across your site — no manual ad containers needed.
+       ════════════════════════════════════════════════════════ -->
+  <!--
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+  -->
+</head>
+<body>
+  <!-- Animated Background -->
+  <div class="animated-bg" aria-hidden="true">
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+  </div>
+  <div class="grid-overlay" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#/" class="nav-brand" onclick="showSection('home')">
+        <span class="logo-icon">TT</span>
+        Trading Toolkit
+      </a>
+      <div class="currency-selector">
+        <select id="currency-select" onchange="changeCurrency(this.value)" aria-label="Select currency">
+          <option value="USD">$ USD</option>
+          <option value="INR">&#x20B9; INR</option>
+        </select>
+      </div>
+      <button class="theme-toggle-btn" onclick="toggleTheme()" aria-label="Toggle dark/light theme" title="Toggle theme">
+        <svg class="sun-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg class="moon-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M3 12h18M3 6h18M3 18h18"/>
+        </svg>
+      </button>
+      <ul class="nav-links" role="navigation" aria-label="Main navigation">
+        <li><a href="#/" class="active" onclick="showSection('home')">Home</a></li>
+        <li><a href="#/" onclick="showSection('position-size')">Position Size</a></li>
+        <li><a href="#/" onclick="showSection('risk-reward')">Risk/Reward</a></li>
+        <li><a href="#/" onclick="showSection('compounding')">Compounding</a></li>
+        <li><a href="#/" onclick="showSection('brokerage')">Brokerage</a></li>
+        <li><a href="#/" onclick="showSection('option-payoff')">Option Payoff</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer Overlay -->
+  <div id="drawerOverlay" class="mobile-drawer-overlay" onclick="closeMobileDrawer()" aria-hidden="true"></div>
+
+  <!-- Mobile Drawer Navigation -->
+  <div id="mobileDrawer" class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <div class="mobile-drawer-header">
+      <span class="logo-icon" aria-hidden="true">TT</span>
+      <button class="mobile-drawer-close" onclick="closeMobileDrawer()" aria-label="Close navigation menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6L6 18M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    <ul class="mobile-drawer-links">
+      <li><a href="#/" class="active" onclick="showSection('home')">&#x1F3E0; Home</a></li>
+      <li><a href="#/" onclick="showSection('position-size')">&#x1F4D0; Position Size</a></li>
+      <li><a href="#/" onclick="showSection('risk-reward')">&#x2696;&#xFE0F; Risk/Reward</a></li>
+      <li><a href="#/" onclick="showSection('compounding')">&#x1F4C8; Compounding</a></li>
+      <li><a href="#/" onclick="showSection('brokerage')">&#x1F4B0; Brokerage</a></li>
+      <li><a href="#/" onclick="showSection('option-payoff')">&#x1F4CA; Option Payoff</a></li>
+    </ul>
+    <div class="mobile-drawer-footer">
+      <button class="theme-toggle-btn drawer-theme-btn" onclick="toggleTheme()" aria-label="Toggle dark/light theme">
+        <svg class="sun-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg class="moon-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <span class="sun-text">Light Mode</span><span class="moon-text">Dark Mode</span>
+      </button>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Main Container -->
+  <main class="container">
+
+    <!-- ==================== HOME SECTION ==================== -->
+    <section id="section-home" class="section active" aria-label="Home">
+      <div class="hero">
+        <div class="hero-badge">&#x1F525; Free Trading Calculator Suite</div>
+        <h1>Make Smarter<br><span class="highlight">Trading Decisions</span></h1>
+        <p>Professional-grade trading calculators to help you manage risk, calculate position sizes, analyze options, and grow your portfolio. All tools are free to use.</p>
+        <div class="hero-cta">
+          <a href="#/" class="btn btn-primary" onclick="showSection('position-size')">
+            &#x1F680; Start Calculating
+          </a>
+          <a href="#tools-overview" class="btn btn-secondary">
+            &#x1F4CB; View All Tools
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="number">5</div>
+            <div class="label">Powerful Tools</div>
+          </div>
+          <div class="hero-stat">
+            <div class="number">100%</div>
+            <div class="label">Free to Use</div>
+          </div>
+          <div class="hero-stat">
+            <div class="number">&#x26A1;</div>
+            <div class="label">Real-time Results</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tools Overview -->
+      <div id="tools-overview" style="padding:40px 0;">
+        <div class="section-header">
+          <h2>&#x1F4CB; All Tools</h2>
+          <p>Choose a calculator to get started. Each tool includes educational content to help you understand the concepts.</p>
+        </div>
+
+        <div class="tool-cards-grid">
+          <div class="tool-card" onclick="showSection('position-size')" tabindex="0" role="button" aria-label="Open Position Size Calculator">
+            <h3>&#x1F4D0; Position Size Calculator</h3>
+            <p>Calculate the optimal position size based on your account balance, risk tolerance, and stop loss level.</p>
+            <div class="tool-tags">
+              <span class="tool-tag cyan">Risk Management</span>
+              <span class="tool-tag green">Beginner Friendly</span>
+            </div>
+          </div>
+
+          <div class="tool-card" onclick="showSection('risk-reward')" tabindex="0" role="button" aria-label="Open Risk/Reward Calculator">
+            <h3>&#x2696;&#xFE0F; Risk/Reward Calculator</h3>
+            <p>Evaluate the risk-to-reward ratio of any trade. Visualize your potential profit against potential loss.</p>
+            <div class="tool-tags">
+              <span class="tool-tag gold">Trade Analysis</span>
+              <span class="tool-tag cyan">Visual</span>
+            </div>
+          </div>
+
+          <div class="tool-card" onclick="showSection('compounding')" tabindex="0" role="button" aria-label="Open Compounding Calculator">
+            <h3>&#x1F4C8; Compounding Calculator</h3>
+            <p>See how your investments grow over time with compound interest. Includes an interactive growth chart.</p>
+            <div class="tool-tags">
+              <span class="tool-tag purple">Investing</span>
+              <span class="tool-tag green">Long-term</span>
+            </div>
+          </div>
+
+          <div class="tool-card" onclick="showSection('brokerage')" tabindex="0" role="button" aria-label="Open Brokerage Calculator">
+            <h3>&#x1F4B0; Brokerage Calculator</h3>
+            <p>Calculate net profit after brokerage fees, STT, and other trading charges. Find your break-even price.</p>
+            <div class="tool-tags">
+              <span class="tool-tag red">Cost Analysis</span>
+              <span class="tool-tag cyan">Essential</span>
+            </div>
+          </div>
+
+          <div class="tool-card" onclick="showSection('option-payoff')" tabindex="0" role="button" aria-label="Open Option Payoff Chart">
+            <h3>&#x1F4CA; Option Payoff Chart</h3>
+            <p>Visualize option strategy payoffs. Interactive chart for call/put options showing profit/loss at expiry.</p>
+            <div class="tool-tags">
+              <span class="tool-tag gold">Options</span>
+              <span class="tool-tag purple">Advanced</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- Educational content on homepage -->
+      <div class="education-content reveal-section">
+        <h3>&#x1F4DA; Why Use Trading Calculators?</h3>
+        <p>Trading calculators are essential tools that help traders make informed decisions based on mathematics rather than emotions. Professional traders use these tools to:</p>
+        <ul>
+          <li><strong>Manage Risk:</strong> Never risk more than you're willing to lose on any single trade.</li>
+          <li><strong>Optimize Position Sizing:</strong> Calculate exactly how many shares or contracts to trade based on your account size.</li>
+          <li><strong>Evaluate Trade Quality:</strong> Use the risk/reward ratio to filter out low-probability trades.</li>
+          <li><strong>Understand True Costs:</strong> Account for brokerage fees, taxes, and other charges in your profit calculations.</li>
+          <li><strong>Visualize Outcomes:</strong> See potential profit and loss scenarios before entering a trade.</li>
+        </ul>
+        <div class="tip-box">
+          <strong>&#x1F4A1; Pro Tip:</strong> The most successful traders focus on risk management first and profits second. Use the Position Size Calculator before every trade.
+        </div>
+      </div>
+
+      <!-- FAQ Section for Home -->
+      <div class="faq-section reveal-section">
+        <h3>Frequently Asked Questions</h3>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+            Are these trading calculators free to use?
+            <span class="faq-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer"><p>Yes, all calculators on Trading Toolkit are completely free to use. There are no hidden fees, premium tiers, or usage limits. We're supported by advertisements.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+            How accurate are the calculator results?
+            <span class="faq-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer"><p>Our calculators use standard financial formulas and are verified for accuracy. However, they are for educational purposes only and should not be the sole basis for trading decisions.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+            Do you store my calculation data?
+            <span class="faq-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer"><p>All calculations are performed locally in your browser. We use localStorage to save your last inputs for convenience, but this data never leaves your device. No calculation data is sent to our servers.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+            Is this website financial advice?
+            <span class="faq-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer"><p>No. Trading Toolkit is an educational resource only. We do not provide financial advice. Always consult with a qualified financial advisor before making investment decisions.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+            Can I use these tools for options trading?
+            <span class="faq-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer"><p>Yes! The Position Size and Option Payoff calculators are specifically useful for options traders. The Option Payoff Chart helps visualize potential outcomes of option strategies.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+            What trading tools do you offer?
+            <span class="faq-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer"><p>We offer five calculators: Position Size Calculator for determining optimal trade size, Risk/Reward Calculator for trade quality analysis, Compounding Calculator for long-term growth projections, Brokerage Calculator for net profit after fees, and Option Payoff Chart for visualizing option strategy outcomes at expiry.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+            What is the minimum account size needed to use these calculators?
+            <span class="faq-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer"><p>There is no minimum account size. The calculators work with any account value you enter. They are designed to help traders of all experience levels and account sizes make informed decisions about position sizing and risk management.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+            How often are the calculators updated?
+            <span class="faq-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer"><p>The calculators are maintained and updated regularly to ensure accuracy and reliability. All calculations run entirely in your browser with the latest financial formulas. There are no server-side components, so you always get instant results without any version lag.</p></div>
+        </div>
+      </div>
+
+
+
+      <!-- Disclaimer -->
+      <div class="disclaimer-banner" style="margin-top:40px;">
+        <strong>&#x26A0;&#xFE0F; Disclaimer:</strong> All tools on this website are for educational and informational purposes only. They do not constitute financial advice. Always consult with a qualified financial advisor before making investment decisions.
+      </div>
+    </section>
+
+    <!-- ==================== POSITION SIZE CALCULATOR ==================== -->
+    <section id="section-position-size" class="section" aria-label="Position Size Calculator">
+      <div class="section-header" style="padding-top:40px;">
+        <h1>&#x1F4D0; Position Size Calculator</h1>
+        <p>Calculate the optimal number of shares or contracts to trade based on your risk parameters.</p>
+      </div>
+
+      <div class="calc-grid">
+        <div class="calc-card">
+          <h3>Input Parameters</h3>
+          <div class="form-group">
+            <label for="ps-account">Account Balance <span class="required">*</span></label>
+            <div class="input-with-suffix">
+              <input type="number" id="ps-account" class="form-input" placeholder="e.g., 10000" step="any" aria-describedby="ps-account-desc">
+              <span class="suffix currency-suffix">$</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="ps-risk">Risk Per Trade <span class="required">*</span></label>
+            <div class="input-with-suffix">
+              <input type="number" id="ps-risk" class="form-input" placeholder="e.g., 2" step="0.1" min="0.1" max="100">
+              <span class="suffix">%</span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="ps-entry">Entry Price <span class="required">*</span></label>
+              <div class="input-with-suffix">
+                <input type="number" id="ps-entry" class="form-input" placeholder="e.g., 150" step="any"><span class="suffix currency-suffix">$</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="ps-stoploss">Stop Loss <span class="required">*</span></label>
+              <div class="input-with-suffix">
+                <input type="number" id="ps-stoploss" class="form-input" placeholder="e.g., 145" step="any">
+                <span class="suffix currency-suffix">$</span>
+              </div>
+            </div>
+          </div>
+          <div id="ps-results" class="results-grid single"></div>
+        </div>
+
+        <div class="calc-card">
+          <h3>How It Works</h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:12px;">
+            The Position Size Calculator helps you determine the number of shares or contracts to trade while keeping your risk within acceptable limits.
+          </p>
+          <h4 style="color:var(--accent-cyan);font-size:0.95rem;margin:16px 0 8px;font-weight:600;">Formula:</h4>
+          <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:8px;">
+            <strong>Risk Amount</strong> = Account Balance &times; (Risk % / 100)<br>
+            <strong>Position Size</strong> = Risk Amount &divide; |Entry - Stop Loss|
+          </p>
+          <h4 style="color:var(--accent-cyan);font-size:0.95rem;margin:16px 0 8px;font-weight:600;">Best Practices:</h4>
+          <ul style="color:var(--text-secondary);font-size:0.85rem;padding-left:16px;">
+            <li style="margin-bottom:6px;">Risk 1-2% of your account per trade</li>
+            <li style="margin-bottom:6px;">Never risk more than you can afford to lose</li>
+            <li style="margin-bottom:6px;">Adjust position size as your account grows</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Education Content -->
+      <div class="education-content reveal-section">
+        <h3>Understanding Position Sizing</h3>
+        <p>Position sizing is one of the most critical components of successful trading. It determines how much of your capital to allocate to each trade based on the distance to your stop loss.</p>
+
+        <h4>Why It Matters</h4>
+        <p>Even if you have a winning strategy, improper position sizing can lead to catastrophic losses. The Kelly Criterion and Fixed Percentage methods are two popular approaches used by professional traders.</p>
+
+        <h4>Common Position Sizing Methods</h4>
+        <ul>
+          <li><strong>Fixed Percentage:</strong> Risk a fixed percentage (e.g., 1-2%) of your account on each trade.</li>
+          <li><strong>Fixed Dollar:</strong> Risk a fixed dollar amount on each trade, regardless of account size.</li>
+          <li><strong>Kelly Criterion:</strong> An advanced formula that optimizes position size based on win rate and risk/reward.</li>
+          <li><strong>Volatility-Based:</strong> Adjust position size based on the volatility of the asset (e.g., ATR).</li>
+        </ul>
+      </div>
+        <!-- FAQ Section -->
+      <div class="faq-section reveal-section">
+        <h3>Position Size Calculator - FAQs</h3>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+            What is the ideal risk percentage per trade?
+            <span class="faq-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-answer"><p>Most professional traders risk between 1% and 2% of their account on any single trade. Beginners should start with 1% or less until they develop a consistent strategy.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+            How does stop loss affect position size?
+            <span class="faq-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-answer"><p>A tighter stop loss allows for a larger position size since the risk per share is smaller. A wider stop loss reduces the position size. Always set stops based on technical analysis, not position size.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+            Should I use fixed percentage or fixed dollar risk?
+            <span class="faq-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-answer"><p>Fixed percentage is generally preferred because it scales with your account size. If you risk 2% on a $10,000 account, that's $200. When your account grows to $20,000, you automatically risk $400, keeping risk proportional to your capital. Fixed dollar amounts need manual adjustment as your account changes.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+            Can I use this calculator for crypto trading?
+            <span class="faq-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-answer"><p>Yes! The Position Size Calculator works for any tradeable asset — stocks, ETFs, forex, crypto, futures, and options. Just enter your account balance, risk percentage, entry price, and stop loss. The calculator will determine the optimal position size regardless of the asset class you're trading.</p></div>
+        </div>
+      </div>
+      <!-- Related Calculators -->
+      <div class="related-calculators reveal-section">
+        <h3>Related Calculators</h3>
+        <div class="related-links">
+          <a href="#/" class="related-link" onclick="showSection('risk-reward')">&#x2696;&#xFE0F; Risk/Reward Calculator</a>
+          <a href="#/" class="related-link" onclick="showSection('brokerage')">&#x1F4B0; Brokerage Calculator</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== RISK/REWARD CALCULATOR ==================== -->
+    <section id="section-risk-reward" class="section" aria-label="Risk Reward Calculator">
+      <div class="section-header" style="padding-top:40px;">
+        <h1>&#x2696;&#xFE0F; Risk/Reward Calculator</h1>
+        <p>Evaluate the quality of any trade by analyzing its risk-to-reward ratio.</p>
+      </div>
+
+      <div class="calc-grid">
+        <div class="calc-card">
+          <h3>Input Parameters</h3>
+          <div class="form-row-3">
+            <div class="form-group">
+              <label for="rr-entry">Entry Price <span class="required">*</span></label>
+              <div class="input-with-suffix">
+                <input type="number" id="rr-entry" class="form-input" placeholder="e.g., 150" step="any"><span class="suffix currency-suffix">$</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="rr-stoploss">Stop Loss <span class="required">*</span></label>
+              <div class="input-with-suffix">
+                <input type="number" id="rr-stoploss" class="form-input" placeholder="e.g., 145" step="any">
+                <span class="suffix currency-suffix">$</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="rr-takeprofit">Take Profit <span class="required">*</span></label>
+              <div class="input-with-suffix">
+                <input type="number" id="rr-takeprofit" class="form-input" placeholder="e.g., 165" step="any">
+                <span class="suffix currency-suffix">$</span>
+              </div>
+            </div>
+          </div>
+          <div id="rr-results" class="results-grid"></div>
+          <div id="rr-visual-bar"></div>
+        </div>
+
+        <div class="calc-card">
+          <h3>Understanding R:R Ratio</h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:12px;">
+            The Risk/Reward (R:R) ratio compares the potential profit of a trade to its potential loss. A ratio of 1:3 means you risk <span class="currency-inline">$</span>1 to make <span class="currency-inline">$</span>3.
+          </p>
+          <h4 style="color:var(--accent-cyan);font-size:0.95rem;margin:16px 0 8px;font-weight:600;">What's a Good Ratio?</h4>
+          <ul style="color:var(--text-secondary);font-size:0.85rem;padding-left:16px;">
+            <li style="margin-bottom:6px;"><span style="color:var(--accent-green);">Excellent:</span> 1:3 or higher</li>
+            <li style="margin-bottom:6px;"><span style="color:var(--accent-cyan);">Good:</span> 1:2 to 1:3</li>
+            <li style="margin-bottom:6px;"><span style="color:var(--accent-gold);">Fair:</span> 1:1 to 1:2</li>
+            <li style="margin-bottom:6px;"><span style="color:var(--accent-red);">Poor:</span> Below 1:1, unless win rate is very high</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="education-content reveal-section">
+        <h3>Mastering Risk/Reward Analysis</h3>
+        <p>Risk/reward analysis is the cornerstone of profitable trading. Even a strategy with a 50% win rate can be profitable if the average winner is larger than the average loser.</p>
+        <h4>The Math Behind It</h4>
+        <p>To calculate your R:R ratio, divide your potential profit (entry to take profit) by your potential loss (entry to stop loss). For example, if you enter at <span class="currency-inline">$</span>150, set a stop at <span class="currency-inline">$</span>145, and a target at <span class="currency-inline">$</span>165:</p>
+        <ul>
+          <li><strong>Risk:</strong> <span class="currency-inline">$</span>150 - <span class="currency-inline">$</span>145 = <span class="currency-inline">$</span>5 per share</li>
+          <li><strong>Reward:</strong> <span class="currency-inline">$</span>165 - <span class="currency-inline">$</span>150 = <span class="currency-inline">$</span>15 per share</li>
+          <li><strong>R:R Ratio:</strong> 15 / 5 = 1:3</li>
+        </ul>
+        <div class="tip-box">
+          <strong>&#x1F4A1; Pro Tip:</strong> Aim for a minimum R:R of 1:2 on your trades. This means you only need to be right 33% of the time to break even (excluding fees).
+        </div>
+      </div>
+
+      <div class="faq-section reveal-section">
+        <h3>Risk/Reward Calculator - FAQs</h3>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+            What is a good risk/reward ratio?
+            <span class="faq-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-answer"><p>A ratio of 1:2 or higher is generally considered good. This means you risk $1 to potentially make $2, giving you a 50% win rate to break even.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+            Do I need a high win rate with good R:R?
+            <span class="faq-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-answer"><p>No. A strategy with a 40% win rate can be highly profitable if the average winner is 3x the average loser. Focus on R:R, not just win rate.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+            How do I calculate expected value from R:R?
+            <span class="faq-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-answer"><p>Expected value = (Win % &times; Average Win) - (Loss % &times; Average Loss). For example, with a 1:3 R:R and 40% win rate: (0.4 &times; 3) - (0.6 &times; 1) = 1.2 - 0.6 = 0.6 positive expected value. This means each trade has a positive average return over many trades.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+            Can the R:R ratio change during a trade?
+            <span class="faq-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-answer"><p>Yes, it can. As the price moves, your risk and potential reward change. Many traders use trailing stop losses to lock in profits, which improves their effective R:R. This is called dynamic risk management and is a key skill for advanced traders.</p></div>
+        </div>
+      </div>
+      <div class="related-calculators reveal-section">
+        <h3>Related Calculators</h3>
+        <div class="related-links">
+          <a href="#/" class="related-link" onclick="showSection('position-size')">&#x1F4D0; Position Size Calculator</a>
+          <a href="#/" class="related-link" onclick="showSection('option-payoff')">&#x1F4CA; Option Payoff Chart</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== COMPOUNDING CALCULATOR ==================== -->
+    <section id="section-compounding" class="section" aria-label="Compounding Calculator">
+      <div class="section-header" style="padding-top:40px;">
+        <h1>&#x1F4C8; Compounding Calculator</h1>
+        <p>See how your money grows over time with the power of compound interest.</p>
+      </div>
+
+      <div class="calc-grid">
+        <div class="calc-card">
+          <h3>Input Parameters</h3>
+          <div class="form-group">
+            <label for="cp-principal">Initial Investment <span class="required">*</span></label>
+            <div class="input-with-suffix">
+              <input type="number" id="cp-principal" class="form-input" placeholder="e.g., 10000" step="any">
+              <span class="suffix currency-suffix">$</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="cp-monthly">Monthly Addition</label>
+            <div class="input-with-suffix">
+              <input type="number" id="cp-monthly" class="form-input" placeholder="e.g., 500" step="any">
+              <span class="suffix currency-suffix">$</span>
+            </div>
+          </div>
+          <div class="form-row-3">
+            <div class="form-group">
+              <label for="cp-rate">Annual Return <span class="required">*</span></label>
+              <div class="input-with-suffix">
+                <input type="number" id="cp-rate" class="form-input" placeholder="e.g., 12" step="0.1">
+                <span class="suffix">%</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="cp-years">Time Period <span class="required">*</span></label>
+              <div class="input-with-suffix">
+                <input type="number" id="cp-years" class="form-input" placeholder="e.g., 10" step="1">
+                <span class="suffix">yrs</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="cp-frequency">Compound Frequency</label>
+              <select id="cp-frequency" class="form-select">
+                <option value="1">Annually</option>
+                <option value="2">Semi-Annually</option>
+                <option value="4">Quarterly</option>
+                <option value="12" selected>Monthly</option>
+                <option value="365">Daily</option>
+              </select>
+            </div>
+          </div>
+          <div id="cp-results" class="results-grid"></div>
+        </div>
+
+        <div class="calc-card">
+          <h3>Growth Chart</h3>
+          <div class="compound-chart-container">
+            <canvas id="cp-chart" aria-label="Compound growth chart" role="img"></canvas>
+          </div>
+          <div class="chart-legend">
+            <div class="legend-item"><span class="dot" style="background:var(--accent-cyan);"></span> Total Value</div>
+            <div class="legend-item"><span class="dot" style="background:var(--accent-green);"></span> Contributions</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="education-content reveal-section">
+        <h3>The Power of Compounding</h3>
+        <p>Albert Einstein reportedly called compound interest the "eighth wonder of the world." Compounding occurs when your investment earnings generate their own earnings, creating exponential growth over time.</p>
+        <h4>Key Factors That Affect Compounding</h4>
+        <ul>
+          <li><strong>Time:</strong> The longer your money compounds, the more dramatic the growth.</li>
+          <li><strong>Rate of Return:</strong> Higher returns compound faster, but come with higher risk.</li>
+          <li><strong>Frequency:</strong> More frequent compounding periods result in slightly higher returns.</li>
+          <li><strong>Consistent Contributions:</strong> Regular monthly additions dramatically accelerate growth.</li>
+        </ul>
+      </div>
+
+      <div class="faq-section reveal-section">
+        <h3>Compounding Calculator - FAQs</h3>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+            How does compounding frequency affect returns?
+            <span class="faq-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-answer"><p>More frequent compounding (daily vs. annual) results in slightly higher returns. For example, $10,000 at 12% for 10 years yields $33,004 compounded daily vs. $31,058 compounded annually.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+            Is the monthly addition required?
+            <span class="faq-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-answer"><p>No. You can leave it at 0 to see how just your initial investment grows. Adding monthly contributions significantly accelerates growth.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+            What is the Rule of 72?
+            <span class="faq-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-answer"><p>The Rule of 72 is a quick way to estimate how long it takes to double your money. Divide 72 by your annual return rate. For example, at 12% annual return: 72 &divide; 12 = 6 years to double. At 8%: 72 &divide; 8 = 9 years. It's a useful mental shortcut, but this calculator gives you the exact figures.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+            Is the compound interest calculator inflation-adjusted?
+            <span class="faq-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-answer"><p>No, this calculator shows nominal returns before inflation. To estimate real (inflation-adjusted) returns, subtract the expected inflation rate from your expected annual return. For example, if you expect 12% returns and 3% inflation, use 9% as your rate in the calculator to see purchasing power growth.</p></div>
+        </div>
+      </div>
+      <div class="related-calculators reveal-section">
+        <h3>Related Tools</h3>
+        <div class="related-links">
+          <a href="#/" class="related-link" onclick="showSection('position-size')">&#x1F4D0; Position Size</a>
+          <a href="#/" class="related-link" onclick="showSection('brokerage')">&#x1F4B0; Brokerage Calculator</a>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ==================== BROKERAGE CALCULATOR ==================== -->
+    <section id="section-brokerage" class="section" aria-label="Brokerage Calculator">
+      <div class="section-header" style="padding-top:40px;">
+        <h1>&#x1F4B0; Brokerage Calculator</h1>
+        <p>Calculate your net profit or loss after accounting for all trading charges and fees.</p>
+      </div>
+
+      <div class="calc-grid">
+        <div class="calc-card">
+          <h3>Input Parameters</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="br-buy">Buy Price <span class="required">*</span></label>
+              <div class="input-with-suffix">
+                <input type="number" id="br-buy" class="form-input" placeholder="e.g., 150" step="any">
+                <span class="suffix currency-suffix">$</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="br-sell">Sell Price <span class="required">*</span></label>
+              <div class="input-with-suffix">
+                <input type="number" id="br-sell" class="form-input" placeholder="e.g., 165" step="any">
+                <span class="suffix currency-suffix">$</span>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="br-qty">Quantity (Shares) <span class="required">*</span></label>
+            <input type="number" id="br-qty" class="form-input" placeholder="e.g., 100" step="1">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="br-charge-type">Charge Type</label>
+              <select id="br-charge-type" class="form-select">
+                <option value="percent">Percentage (%)</option>
+                <option value="fixed">Fixed per Share</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="br-rate">Rate <span class="required">*</span></label>
+              <div class="input-with-suffix">
+                <input type="number" id="br-rate" class="form-input" placeholder="e.g., 0.05" step="0.01">
+                <span class="suffix" id="br-rate-suffix"><span class="currency-suffix">$</span>%</span>
+              </div>
+            </div>
+          </div>
+          <div id="br-results" class="results-grid"></div>
+        </div>
+
+        <div class="calc-card">
+          <h3>Understanding Trading Costs</h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:12px;">
+            Trading costs can significantly eat into your profits. This calculator accounts for brokerage fees, STT (Securities Transaction Tax), and stamp duty.
+          </p>
+          <h4 style="color:var(--accent-cyan);font-size:0.95rem;margin:16px 0 8px;font-weight:600;">Typical Charges:</h4>
+          <ul style="color:var(--text-secondary);font-size:0.85rem;padding-left:16px;">
+            <li style="margin-bottom:6px;"><strong>Brokerage:</strong> 0.01% - 0.5% per trade</li>
+            <li style="margin-bottom:6px;"><strong>STT:</strong> ~0.1% (both sides)</li>
+            <li style="margin-bottom:6px;"><strong>Stamp Duty:</strong> ~0.003%</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="education-content reveal-section">
+        <h3>Don't Let Fees Eat Your Returns</h3>
+        <p>Many traders underestimate the impact of trading costs on their overall profitability. Even seemingly small fees can add up to significant amounts over hundreds of trades.</p>
+        <h4>How to Minimize Trading Costs</h4>
+        <ul>
+          <li><strong>Choose a low-cost broker:</strong> Compare brokerage rates before opening an account.</li>
+          <li><strong>Reduce trade frequency:</strong> Overtrading is a common mistake that increases costs.</li>
+          <li><strong>Use limit orders:</strong> Avoid paying the spread on market orders.</li>
+          <li><strong>Consider position size:</strong> Larger positions may qualify for lower per-share fees.</li>
+        </ul>
+      </div>
+
+      <div class="faq-section reveal-section">
+        <h3>Brokerage Calculator - FAQs</h3>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+            What is the difference between percentage and fixed fees?
+            <span class="faq-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-answer"><p>Percentage fees scale with trade size (e.g., 0.05% of total value), while fixed fees are a flat amount per share traded (e.g., $0.01 per share).</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+            What is the break-even price?
+            <span class="faq-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-answer"><p>The break-even price is the price your stock needs to reach at sale to cover all trading costs. Below this price, you're making a net loss even if the stock price is above your buy price.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+            Are there hidden fees not shown in this calculator?
+            <span class="faq-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-answer"><p>The calculator accounts for brokerage fees, STT (Securities Transaction Tax), and stamp duty — the three main charges on Indian stock trades. Depending on your broker, there may be additional charges like GST on brokerage, SEBI turnover fees, or exchange transaction charges. Check your broker's fee schedule for the complete picture.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+            How do I choose between percentage and fixed fees?
+            <span class="faq-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-answer"><p>Choose the option that matches your broker's fee structure. Percentage fees (e.g., 0.05% per trade) are common with discount brokers and scale with trade value. Fixed fees (e.g., $0.01 per share) are typical with full-service brokers. For very large trades, fixed fees often work out cheaper. Use this calculator to compare both scenarios.</p></div>
+        </div>
+      </div>
+      <div class="related-calculators reveal-section">
+        <h3>Related Calculators</h3>
+        <div class="related-links">
+          <a href="#/" class="related-link" onclick="showSection('position-size')">&#x1F4D0; Position Size</a>
+          <a href="#/" class="related-link" onclick="showSection('risk-reward')">&#x2696;&#xFE0F; Risk/Reward</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== OPTION PAYOFF CHART ==================== -->
+    <section id="section-option-payoff" class="section" aria-label="Option Payoff Chart">
+      <div class="section-header" style="padding-top:40px;">
+        <h1>&#x1F4CA; Option Payoff Chart</h1>
+        <p>Visualize the profit and loss of option strategies at different spot prices at expiry.</p>
+      </div>
+
+      <div class="calc-grid full">
+        <div class="calc-card">
+          <div class="option-payoff-layout">
+            <div>
+              <h3>Input Parameters</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="op-type">Option Type</label>
+                  <select id="op-type" class="form-select">
+                    <option value="call">Call Option</option>
+                    <option value="put">Put Option</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="op-action">Action</label>
+                  <select id="op-action" class="form-select">
+                    <option value="buy">Buy (Long)</option>
+                    <option value="sell">Sell (Short)</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="op-strike">Strike Price <span class="required">*</span></label>
+                  <div class="input-with-suffix">
+                    <input type="number" id="op-strike" class="form-input" placeholder="e.g., 150" step="any">
+                    <span class="suffix currency-suffix">$</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="op-premium">Premium <span class="required">*</span></label>
+                  <div class="input-with-suffix">
+                    <input type="number" id="op-premium" class="form-input" placeholder="e.g., 5" step="any">
+                    <span class="suffix currency-suffix">$</span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="op-contracts">Number of Contracts</label>
+                <input type="number" id="op-contracts" class="form-input" placeholder="e.g., 1" step="1" min="1">
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="op-spot-min">Spot Price Min <span class="required">*</span></label>
+                  <div class="input-with-suffix">
+                    <input type="number" id="op-spot-min" class="form-input" placeholder="e.g., 100" step="any">
+                    <span class="suffix currency-suffix">$</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="op-spot-max">Spot Price Max <span class="required">*</span></label>
+                  <div class="input-with-suffix">
+                    <input type="number" id="op-spot-max" class="form-input" placeholder="e.g., 200" step="any">
+                    <span class="suffix currency-suffix">$</span>
+                  </div>
+                </div>
+              </div>
+              <div id="op-results" class="results-grid" style="margin-top:16px;"></div>
+            </div>
+            <div>
+              <h3>Payoff Diagram</h3>
+              <div class="chart-container">
+                <canvas id="op-chart" aria-label="Option payoff chart" role="img"></canvas>
+              </div>
+              <div class="chart-legend">
+                <div class="legend-item"><span class="dot" style="background:var(--accent-cyan);"></span> P&amp;L at Expiry</div>
+                <div class="legend-item"><span class="dot" style="background:rgba(245,158,11,0.6);"></span> Strike Price</div>
+                <div class="legend-item"><span class="dot" style="background:rgba(255,255,255,0.15);"></span> Break-Even</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="education-content reveal-section">
+        <h3>Understanding Option Payoffs</h3>
+        <p>An option payoff diagram shows the profit or loss of an option position at expiration, for different prices of the underlying asset.</p>
+        <h4>Key Concepts</h4>
+        <ul>
+          <li><strong>Intrinsic Value:</strong> The value of an option if exercised immediately.</li>
+          <li><strong>Time Value:</strong> The additional premium paid above intrinsic value.</li>
+          <li><strong>Break-Even Point:</strong> The spot price at which the option strategy neither makes nor loses money.</li>
+          <li><strong>Maximum Loss:</strong> For long options, limited to the premium paid.</li>
+        </ul>
+      </div>
+
+      <div class="faq-section reveal-section">
+        <h3>Option Payoff - FAQs</h3>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+            What does the payoff chart show?
+            <span class="faq-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-answer"><p>The chart shows potential profit or loss at expiration across different underlying prices. The green dot marks maximum profit, the red dot marks maximum loss.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+            Can I lose more than my investment with options?
+            <span class="faq-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-answer"><p>With long options (buying), your maximum loss is limited to the premium paid. With short options (selling), losses can be potentially unlimited, which is why option selling carries higher risk.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+            What happens if I hold options until expiry?
+            <span class="faq-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-answer"><p>If you hold a call option until expiry and the stock price is above the strike, the option expires in-the-money and is typically settled for its intrinsic value. If the stock price is below the strike, the option expires worthless and you lose the entire premium paid. The payoff chart shows exactly where you profit, break even, or lose money at expiry.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+            How do I calculate break-even for calls vs puts?
+            <span class="faq-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-answer"><p>For a long call: Break-even = Strike Price + Premium Paid. For a long put: Break-even = Strike Price - Premium Paid. For short positions, it's reversed. For example, buying a $150 call for $5 premium means the stock needs to reach $155 to break even. The chart automatically calculates and marks the break-even point for you.</p></div>
+        </div>
+      </div>
+      <div class="related-calculators reveal-section">
+        <h3>Related Calculators</h3>
+        <div class="related-links">
+          <a href="#/" class="related-link" onclick="showSection('risk-reward')">&#x2696;&#xFE0F; Risk/Reward</a>
+          <a href="#/" class="related-link" onclick="showSection('position-size')">&#x1F4D0; Position Size</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Floating Action Button -->
+  <button id="fab-button" class="fab" onclick="scrollToCalculator()" aria-label="Scroll to calculator">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4><span style="display:inline-flex;width:28px;height:28px;background:var(--gradient-primary);border-radius:6px;align-items:center;justify-content:center;font-size:0.8rem;color:#fff;font-weight:800;" aria-hidden="true">TT</span> Trading Toolkit</h4>
+          <p>Free trading calculators and educational tools designed to help traders make informed decisions. All tools are provided for educational purposes only.</p>
+          <div class="last-updated-badge">&#x1F4C5; Last updated: May 2026</div>
+        </div>
+        <div class="footer-col">
+          <h5>Tools</h5>
+          <a href="#/" onclick="showSection('position-size')">Position Size</a>
+          <a href="#/" onclick="showSection('risk-reward')">Risk/Reward</a>
+          <a href="#/" onclick="showSection('compounding')">Compounding</a>
+          <a href="#/" onclick="showSection('brokerage')">Brokerage</a>
+          <a href="#/" onclick="showSection('option-payoff')">Option Payoff</a>
+        </div>
+        <div class="footer-col">
+          <h5>Resources</h5>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+          <a href="disclaimer.html">Disclaimer</a>
+        </div>
+        <div class="footer-col">
+          <h5>Legal</h5>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Use</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Trading Toolkit. All rights reserved. Not financial advice.</p>
+        <p>Built with &#x2764;&#xFE0F; for the trading community</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/calculators.js"></script>
+  <script>
+    // ===========================
+    // Handle window resize for charts
+    // ===========================
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(function() {
+        if (document.getElementById('section-compounding').classList.contains('active')) {
+          calcCompound();
+        }
+        if (document.getElementById('section-option-payoff').classList.contains('active')) {
+          calcOptionPayoff();
+        }
+      }, 300);
+    });
+  </script>
+
+  <!-- Consolidated FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Are these trading calculators free to use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, all calculators on Trading Toolkit are completely free to use. There are no hidden fees, premium tiers, or usage limits."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How accurate are the calculator results?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our calculators use standard financial formulas and are verified for accuracy. However, they are for educational purposes only."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you store my calculation data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "All calculations are performed locally in your browser using localStorage. No data is sent to our servers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this website financial advice?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Trading Toolkit is an educational resource only. Always consult with a qualified financial advisor before making investment decisions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What trading tools do you offer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We offer five calculators: Position Size, Risk/Reward, Compounding, Brokerage, and Option Payoff Chart for different trading needs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the ideal risk percentage per trade?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most professional traders risk between 1% and 2% of their account on any single trade. Beginners should start with 1% or less."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use the position size calculator for crypto trading?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, the Position Size Calculator works for any tradeable asset including stocks, ETFs, forex, crypto, futures, and options."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a good risk/reward ratio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A ratio of 1:2 or higher is generally considered good. This means you risk $1 to potentially make $2."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I calculate expected value from R:R?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Expected value = (Win% x Avg Win) - (Loss% x Avg Loss). Positive expected value means the trade setup is profitable over many trades."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does compounding frequency affect returns?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "More frequent compounding results in slightly higher returns over time. Daily compounding yields more than annual compounding."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the Rule of 72?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Rule of 72 estimates doubling time: divide 72 by your annual return rate. For example, 72/12% = 6 years to double your money."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between percentage and fixed fees?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Percentage fees scale with trade size while fixed fees are a flat amount per share traded."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the break-even price?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The break-even price is the price your stock needs to reach at sale to cover all trading costs. Below this, you incur a net loss."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does the option payoff chart show?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The chart shows potential profit or loss at expiration across different underlying prices, including break-even points."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I calculate break-even for calls vs puts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For a long call: Break-even = Strike Price + Premium Paid. For a long put: Break-even = Strike Price - Premium Paid."
+        }
+      }
+    ]
+  }
+  </script>
+</body>
+</html>

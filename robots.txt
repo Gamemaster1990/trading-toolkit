@@ -1,0 +1,19 @@
+# robots.txt for Trading Toolkit
+# https://tradingtoolkit.com/
+
+# Allow all crawlers full access to the site
+User-agent: *
+Allow: /
+
+# Allow Googlebot and AdSense crawler specifically
+User-agent: Googlebot
+Allow: /
+
+User-agent: Mediapartners-Google
+Allow: /
+
+# Sitemap location
+Sitemap: https://tradingtoolkit.com/sitemap.xml
+
+# Crawl delay to reduce server load
+Crawl-delay: 5
