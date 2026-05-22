@@ -4,49 +4,49 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://tradingtoolkit.com/</loc>
+    <loc>https://gamemaster1990.github.io/trading-toolkit/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <!-- About Page -->
   <url>
-    <loc>https://tradingtoolkit.com/about.html</loc>
+    <loc>https://gamemaster1990.github.io/trading-toolkit/about.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Contact Page -->
   <url>
-    <loc>https://tradingtoolkit.com/contact.html</loc>
+    <loc>https://gamemaster1990.github.io/trading-toolkit/contact.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <!-- Privacy Policy -->
   <url>
-    <loc>https://tradingtoolkit.com/privacy-policy.html</loc>
+    <loc>https://gamemaster1990.github.io/trading-toolkit/privacy-policy.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
 
   <!-- Disclaimer -->
   <url>
-    <loc>https://tradingtoolkit.com/disclaimer.html</loc>
+    <loc>https://gamemaster1990.github.io/trading-toolkit/disclaimer.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
 
   <!-- Terms of Use -->
   <url>
-    <loc>https://tradingtoolkit.com/terms.html</loc>
+    <loc>https://gamemaster1990.github.io/trading-toolkit/terms.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
 
   <!-- 404 Error Page -->
   <url>
-    <loc>https://tradingtoolkit.com/404.html</loc>
+    <loc>https://gamemaster1990.github.io/trading-toolkit/404.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.1</priority>
   </url>

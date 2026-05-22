@@ -1,5 +1,5 @@
 # robots.txt for Trading Toolkit
-# https://tradingtoolkit.com/
+# https://gamemaster1990.github.io/trading-toolkit/
 
 # Allow all crawlers full access to the site
 User-agent: *
@@ -13,7 +13,7 @@ User-agent: Mediapartners-Google
 Allow: /
 
 # Sitemap location
-Sitemap: https://tradingtoolkit.com/sitemap.xml
+Sitemap: https://gamemaster1990.github.io/trading-toolkit/sitemap.xml
 
 # Crawl delay to reduce server load
 Crawl-delay: 5

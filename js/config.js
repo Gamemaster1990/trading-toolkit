@@ -5,8 +5,9 @@
    =========================== */
 
 var SITE_CONFIG = {
-  // Update this to your actual domain when deployed
-  domain: 'tradingtoolkit.com',
+  // Current live URL (update when you get a custom domain)
+  domain: 'gamemaster1990.github.io',
+  basePath: '/trading-toolkit',
   
   // Google AdSense Publisher ID - update when you get yours
   adsenseId: 'ca-pub-XXXXXXXXXXXXXXXX',
@@ -22,6 +23,6 @@ var SITE_CONFIG = {
   
   // Get full URL for a path
   getUrl: function(path) {
-    return 'https://' + this.domain + (path || '/');
+    return 'https://' + this.domain + this.basePath + (path || '/');
   }
 };
