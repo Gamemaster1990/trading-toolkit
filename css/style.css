@@ -805,40 +805,7 @@ nav.scrolled {
   margin-bottom: 32px;
 }
 
-/* Sticky section header for calculator tools */
-.section.active > .section-header {
-  position: sticky;
-  top: 76px;
-  z-index: 10;
-  background: var(--bg-primary);
-  padding-top: 14px !important;
-  padding-bottom: 14px;
-  margin-bottom: 16px;
-  border-bottom: 1px solid var(--border-glass);
-}
 
-.section.active > .section-header h1 {
-  font-size: 1.35rem;
-}
-
-.section.active > .section-header p {
-  font-size: 0.85rem;
-  max-width: 420px;
-}
-
-@media (max-width: 768px) {
-  .section.active > .section-header {
-    top: 72px;
-    padding-top: 10px !important;
-    padding-bottom: 10px;
-  }
-  .section.active > .section-header h1 {
-    font-size: 1.15rem;
-  }
-  .section.active > .section-header p {
-    font-size: 0.78rem;
-  }
-}
 
 .section-header h1,
 .section-header h2 {
