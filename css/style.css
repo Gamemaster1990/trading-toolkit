@@ -828,7 +828,7 @@ nav.scrolled {
 
 @media (max-width: 768px) {
   .section.active > .section-header {
-    top: 66px;
+    top: 72px;
     padding-top: 10px !important;
     padding-bottom: 10px;
   }
