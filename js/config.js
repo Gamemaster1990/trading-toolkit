@@ -10,7 +10,7 @@ var SITE_CONFIG = {
   basePath: '',
   
   // Google AdSense Publisher ID - update when you get yours
-  adsenseId: 'ca-pub-XXXXXXXXXXXXXXXX',
+  adsenseId: 'ca-pub-8228373593966913',
   
   // Site name
   siteName: 'Trading Toolkit',
@@ -19,7 +19,7 @@ var SITE_CONFIG = {
   contactEmail: 'gamemastergameplayss@gmail.com',
   
   // Whether Google AdSense is enabled
-  adsenseEnabled: false,
+  adsenseEnabled: true,
   
   // Get full URL for a path
   getUrl: function(path) {
