@@ -1276,11 +1276,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 300);
   });
 
-  // ---- Check URL hash for direct section access ----
+  // ---- Check URL hash for direct section access (immediate, no flash) ----
   if (window.location.hash) {
     var hash = window.location.hash.replace('#', '');
     if (hash && hash !== 'home') {
-      setTimeout(function() { showSection(hash); }, 100);
+      showSection(hash);
     }
   }
 
