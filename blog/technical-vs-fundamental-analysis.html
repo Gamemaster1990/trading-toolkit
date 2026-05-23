@@ -8,14 +8,7 @@
   <meta name="theme-color" content="#060a15">
   <meta name="google-site-verification" content="3B3KYvbZZNgEGQF-L-8rWtp6traTQSEcM5hdIyr6Alw" />
   
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G5E46P21Z6"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-G5E46P21Z6');
-  </script>
+
   
   <link rel="canonical" href="https://tradingtoolkit.online/blog/technical-vs-fundamental-analysis.html">
 
@@ -32,10 +25,17 @@
 
   <title>Technical Analysis vs Fundamental Analysis: Which One Should You Use? | Trading Toolkit</title>
 
+  <!-- Preconnect & resource hints -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+  <link rel="preload" as="style" href="../css/style.min.css">
+  <link rel="stylesheet" href="../css/style.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="../css/style.min.css"></noscript>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2300d4ff'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%23fff' font-size='18' font-weight='bold' font-family='Inter'%3ETT%3C/text%3E%3C/svg%3E">
 
   <script type="application/ld+json">
@@ -381,8 +381,19 @@
     </div>
   </footer>
 
-  <script src="../js/config.js"></script>
-  <script src="../js/calculators.js"></script>
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js').catch(function(err) {
+          console.log('SW registration failed: ', err);
+        });
+      });
+    }
+  </script>
+
+  <script src="../js/config.min.js"></script>
+  <script src="../js/calculators.min.js"></script>
 
   <div id="cookie-consent-banner" class="cookie-consent-overlay" role="dialog" aria-label="Cookie consent">
     <div class="cookie-consent-inner">
@@ -427,5 +438,46 @@
       </div>
     </div>
   </div>
+  <!-- ════════════════════════════════════════════════════════
+       Deferred Google Analytics
+       Loads after first user interaction to improve mobile
+       PageSpeed by keeping the critical path clean.
+       ════════════════════════════════════════════════════════ -->
+  <script>
+    (function() {
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function(){dataLayer.push(arguments);};
+
+      var _loaded = false;
+      function _loadDeferred() {
+        if (_loaded) return;
+        _loaded = true;
+
+        // Google Analytics (gtag.js)
+        var ga = document.createElement('script');
+        ga.async = true;
+        ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-G5E46P21Z6';
+        document.head.appendChild(ga);
+
+        // GA init (queued in dataLayer; processed when gtag.js loads)
+        gtag('js', new Date());
+        gtag('config', 'G-G5E46P21Z6');
+
+        // Clean up event listeners
+        ['scroll','mousedown','touchstart','keydown','wheel'].forEach(function(e) {
+          window.removeEventListener(e, _loadDeferred);
+        });
+      }
+
+      // Trigger on first user interaction
+      ['scroll','mousedown','touchstart','keydown','wheel'].forEach(function(e) {
+        window.addEventListener(e, _loadDeferred, { once: true, passive: true });
+      });
+
+      // Safety net: load after 10s even without interaction
+      setTimeout(_loadDeferred, 10000);
+    })();
+  </script>
+
 </body>
 </html>
