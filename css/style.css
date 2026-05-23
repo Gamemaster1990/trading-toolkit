@@ -352,15 +352,9 @@ nav.scrolled {
 .nav-brand .logo-icon {
   width: 34px;
   height: 34px;
-  background: var(--gradient-primary);
   border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.95rem;
-  font-weight: 800;
-  color: #fff;
   box-shadow: 0 0 20px rgba(0, 212, 255, 0.25);
+  object-fit: cover;
 }
 
 .nav-links {
@@ -484,14 +478,8 @@ nav.scrolled {
 .mobile-drawer-header .logo-icon {
   width: 32px;
   height: 32px;
-  background: var(--gradient-primary);
   border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.85rem;
-  font-weight: 800;
-  color: #fff;
+  object-fit: cover;
 }
 
 .mobile-drawer-close {
@@ -2456,7 +2444,6 @@ footer::before {
   .nav-brand .logo-icon {
     width: 28px;
     height: 28px;
-    font-size: 0.8rem;
   }
   
   .mobile-drawer {
