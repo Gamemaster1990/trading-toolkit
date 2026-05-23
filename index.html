@@ -43,9 +43,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://pagead2.googlesyndication.com">
 
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=optional">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=optional" rel="stylesheet"></noscript>
   <link rel="preload" as="style" href="css/style.min.css">
   <link rel="stylesheet" href="css/style.min.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="css/style.min.css"></noscript>
@@ -107,7 +107,7 @@
   <!-- Navigation -->
   <nav id="navbar">
     <div class="nav-inner">
-      <a href="javascript:void(0)" class="nav-brand" onclick="showSection('home')">
+      <a href="#home" class="nav-brand" onclick="showSection('home');return false;">
         <span class="logo-icon">TT</span>
         Trading Toolkit
       </a>
@@ -126,13 +126,13 @@
           <path d="M3 12h18M3 6h18M3 18h18"/>
         </svg>
       </button>
-      <ul class="nav-links" role="navigation" aria-label="Main navigation">
-        <li><a href="javascript:void(0)" class="active" onclick="showSection('home')">Home</a></li>
-        <li><a href="javascript:void(0)" onclick="showSection('position-size')">Position Size</a></li>
-        <li><a href="javascript:void(0)" onclick="showSection('risk-reward')">Risk/Reward</a></li>
-        <li><a href="javascript:void(0)" onclick="showSection('compounding')">Compounding</a></li>
-        <li><a href="javascript:void(0)" onclick="showSection('brokerage')">Brokerage</a></li>
-        <li><a href="javascript:void(0)" onclick="showSection('option-payoff')">Option Payoff</a></li>
+      <ul class="nav-links">
+        <li><a href="#home" class="active" onclick="showSection('home');return false;">Home</a></li>
+        <li><a href="#position-size" onclick="showSection('position-size');return false;">Position Size</a></li>
+        <li><a href="#risk-reward" onclick="showSection('risk-reward');return false;">Risk/Reward</a></li>
+        <li><a href="#compounding" onclick="showSection('compounding');return false;">Compounding</a></li>
+        <li><a href="#brokerage" onclick="showSection('brokerage');return false;">Brokerage</a></li>
+        <li><a href="#option-payoff" onclick="showSection('option-payoff');return false;">Option Payoff</a></li>
         <li><a href="blog.html">Blog</a></li>
       </ul>
     </div>
@@ -152,11 +152,11 @@
       </button>
     </div>
     <ul class="mobile-drawer-links">
-      <li><a href="javascript:void(0)" class="active" onclick="showSection('home')">&#x1F3E0; Home</a></li>
-      <li><a href="javascript:void(0)" onclick="showSection('position-size')">&#x1F4D0; Position Size</a></li>
-      <li><a href="javascript:void(0)" onclick="showSection('risk-reward')">&#x2696;&#xFE0F; Risk/Reward</a></li>
-      <li><a href="javascript:void(0)" onclick="showSection('compounding')">&#x1F4C8; Compounding</a></li>
-      <li><a href="javascript:void(0)" onclick="showSection('brokerage')">&#x1F4B0; Brokerage</a></li>        <li><a href="javascript:void(0)" onclick="showSection('option-payoff')">&#x1F4CA; Option Payoff</a></li>
+      <li><a href="#home" class="active" onclick="showSection('home');return false;">&#x1F3E0; Home</a></li>
+      <li><a href="#position-size" onclick="showSection('position-size');return false;">&#x1F4D0; Position Size</a></li>
+      <li><a href="#risk-reward" onclick="showSection('risk-reward');return false;">&#x2696;&#xFE0F; Risk/Reward</a></li>
+      <li><a href="#compounding" onclick="showSection('compounding');return false;">&#x1F4C8; Compounding</a></li>
+      <li><a href="#brokerage" onclick="showSection('brokerage');return false;">&#x1F4B0; Brokerage</a></li>        <li><a href="#option-payoff" onclick="showSection('option-payoff');return false;">&#x1F4CA; Option Payoff</a></li>
         <li><a href="blog.html">&#x1F4DD; Blog</a></li>
       </ul>
     <div class="mobile-drawer-footer">
@@ -187,7 +187,7 @@
         <h1>Make Smarter<br><span class="highlight">Trading Decisions</span></h1>
         <p>Professional-grade trading calculators to help you manage risk, calculate position sizes, analyze options, and grow your portfolio. All tools are free to use.</p>
         <div class="hero-cta">
-          <a href="javascript:void(0)" class="btn btn-primary" onclick="showSection('position-size')">
+          <a href="#position-size" class="btn btn-primary" onclick="showSection('position-size');return false;">
             &#x1F680; Start Calculating
           </a>
           <a href="#tools-overview" class="btn btn-secondary">
@@ -218,7 +218,7 @@
         </div>
 
         <div class="tool-cards-grid">
-          <div class="tool-card" onclick="showSection('position-size')" tabindex="0" role="button" aria-label="Open Position Size Calculator">
+          <div class="tool-card" onclick="showSection('position-size');" tabindex="0" role="link" aria-label="Open Position Size Calculator">
             <h3>&#x1F4D0; Position Size Calculator</h3>
             <p>Calculate the optimal position size based on your account balance, risk tolerance, and stop loss level.</p>
             <div class="tool-tags">
@@ -227,7 +227,7 @@
             </div>
           </div>
 
-          <div class="tool-card" onclick="showSection('risk-reward')" tabindex="0" role="button" aria-label="Open Risk/Reward Calculator">
+          <div class="tool-card" onclick="showSection('risk-reward');" tabindex="0" role="link" aria-label="Open Risk/Reward Calculator">
             <h3>&#x2696;&#xFE0F; Risk/Reward Calculator</h3>
             <p>Evaluate the risk-to-reward ratio of any trade. Visualize your potential profit against potential loss.</p>
             <div class="tool-tags">
@@ -236,7 +236,7 @@
             </div>
           </div>
 
-          <div class="tool-card" onclick="showSection('compounding')" tabindex="0" role="button" aria-label="Open Compounding Calculator">
+          <div class="tool-card" onclick="showSection('compounding');" tabindex="0" role="link" aria-label="Open Compounding Calculator">
             <h3>&#x1F4C8; Compounding Calculator</h3>
             <p>See how your investments grow over time with compound interest. Includes an interactive growth chart.</p>
             <div class="tool-tags">
@@ -245,7 +245,7 @@
             </div>
           </div>
 
-          <div class="tool-card" onclick="showSection('brokerage')" tabindex="0" role="button" aria-label="Open Brokerage Calculator">
+          <div class="tool-card" onclick="showSection('brokerage');" tabindex="0" role="link" aria-label="Open Brokerage Calculator">
             <h3>&#x1F4B0; Brokerage Calculator</h3>
             <p>Calculate net profit after brokerage fees, STT, and other trading charges. Find your break-even price.</p>
             <div class="tool-tags">
@@ -254,7 +254,7 @@
             </div>
           </div>
 
-          <div class="tool-card" onclick="showSection('option-payoff')" tabindex="0" role="button" aria-label="Open Option Payoff Chart">
+          <div class="tool-card" onclick="showSection('option-payoff');" tabindex="0" role="link" aria-label="Open Option Payoff Chart">
             <h3>&#x1F4CA; Option Payoff Chart</h3>
             <p>Visualize option strategy payoffs. Interactive chart for call/put options showing profit/loss at expiry.</p>
             <div class="tool-tags">
@@ -370,7 +370,6 @@
 
 
 
-      <!-- Disclaimer -->
       <div class="disclaimer-banner" style="margin-top:40px;">
         <strong>&#x26A0;&#xFE0F; Disclaimer:</strong> All tools on this website are for educational and informational purposes only. They do not constitute financial advice. Always consult with a qualified financial advisor before making investment decisions.
       </div>
@@ -495,8 +494,8 @@
       <div class="related-calculators reveal-section">
         <h3>Related Calculators</h3>
         <div class="related-links">
-          <a href="javascript:void(0)" class="related-link" onclick="showSection('risk-reward')">&#x2696;&#xFE0F; Risk/Reward Calculator</a>
-          <a href="javascript:void(0)" class="related-link" onclick="showSection('brokerage')">&#x1F4B0; Brokerage Calculator</a>
+          <a href="#risk-reward" class="related-link" onclick="showSection('risk-reward');return false;">&#x2696;&#xFE0F; Risk/Reward Calculator</a>
+          <a href="#brokerage" class="related-link" onclick="showSection('brokerage');return false;">&#x1F4B0; Brokerage Calculator</a>
         </div>
       </div>
     </section>
@@ -607,8 +606,8 @@
       <div class="related-calculators reveal-section">
         <h3>Related Calculators</h3>
         <div class="related-links">
-          <a href="javascript:void(0)" class="related-link" onclick="showSection('position-size')">&#x1F4D0; Position Size Calculator</a>
-          <a href="javascript:void(0)" class="related-link" onclick="showSection('option-payoff')">&#x1F4CA; Option Payoff Chart</a>
+          <a href="#position-size" class="related-link" onclick="showSection('position-size');return false;">&#x1F4D0; Position Size Calculator</a>
+          <a href="#option-payoff" class="related-link" onclick="showSection('option-payoff');return false;">&#x1F4CA; Option Payoff Chart</a>
         </div>
       </div>
     </section>
@@ -730,8 +729,8 @@
       <div class="related-calculators reveal-section">
         <h3>Related Tools</h3>
         <div class="related-links">
-          <a href="javascript:void(0)" class="related-link" onclick="showSection('position-size')">&#x1F4D0; Position Size</a>
-          <a href="javascript:void(0)" class="related-link" onclick="showSection('brokerage')">&#x1F4B0; Brokerage Calculator</a>
+          <a href="#position-size" class="related-link" onclick="showSection('position-size');return false;">&#x1F4D0; Position Size</a>
+          <a href="#brokerage" class="related-link" onclick="showSection('brokerage');return false;">&#x1F4B0; Brokerage Calculator</a>
         </div>
       </div>
     </section>
@@ -853,8 +852,8 @@
       <div class="related-calculators reveal-section">
         <h3>Related Calculators</h3>
         <div class="related-links">
-          <a href="javascript:void(0)" class="related-link" onclick="showSection('position-size')">&#x1F4D0; Position Size</a>
-          <a href="javascript:void(0)" class="related-link" onclick="showSection('risk-reward')">&#x2696;&#xFE0F; Risk/Reward</a>
+          <a href="#position-size" class="related-link" onclick="showSection('position-size');return false;">&#x1F4D0; Position Size</a>
+          <a href="#risk-reward" class="related-link" onclick="showSection('risk-reward');return false;">&#x2696;&#xFE0F; Risk/Reward</a>
         </div>
       </div>
     </section>
@@ -992,8 +991,8 @@
       <div class="related-calculators reveal-section">
         <h3>Related Calculators</h3>
         <div class="related-links">
-          <a href="javascript:void(0)" class="related-link" onclick="showSection('risk-reward')">&#x2696;&#xFE0F; Risk/Reward</a>
-          <a href="javascript:void(0)" class="related-link" onclick="showSection('position-size')">&#x1F4D0; Position Size</a>
+          <a href="#risk-reward" class="related-link" onclick="showSection('risk-reward');return false;">&#x2696;&#xFE0F; Risk/Reward</a>
+          <a href="#position-size" class="related-link" onclick="showSection('position-size');return false;">&#x1F4D0; Position Size</a>
         </div>
       </div>
     </section>
@@ -1018,11 +1017,11 @@
         </div>
         <div class="footer-col">
           <h5>Tools</h5>
-          <a href="javascript:void(0)" onclick="showSection('position-size')">Position Size</a>
-          <a href="javascript:void(0)" onclick="showSection('risk-reward')">Risk/Reward</a>
-          <a href="javascript:void(0)" onclick="showSection('compounding')">Compounding</a>
-          <a href="javascript:void(0)" onclick="showSection('brokerage')">Brokerage</a>
-          <a href="javascript:void(0)" onclick="showSection('option-payoff')">Option Payoff</a>
+          <a href="#position-size" onclick="showSection('position-size');return false;">Position Size</a>
+          <a href="#risk-reward" onclick="showSection('risk-reward');return false;">Risk/Reward</a>
+          <a href="#compounding" onclick="showSection('compounding');return false;">Compounding</a>
+          <a href="#brokerage" onclick="showSection('brokerage');return false;">Brokerage</a>
+          <a href="#option-payoff" onclick="showSection('option-payoff');return false;">Option Payoff</a>
         </div>
         <div class="footer-col">
           <h5>Resources</h5>
@@ -1057,6 +1056,7 @@
 
   <!-- Scripts -->
   <script src="js/config.min.js"></script>
+  <script src="js/shared.min.js"></script>
   <script src="js/calculators.min.js"></script>
   <script>
     // Immediate hash check — no flash, shows correct section on refresh

@@ -1404,8 +1404,15 @@ nav.scrolled {
 }
 
 .toggle-switch input:disabled + .toggle-slider {
-  opacity: 0.5;
+  opacity: 0.6;
   cursor: not-allowed;
+  background: var(--accent-cyan);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+.toggle-switch input:disabled + .toggle-slider::before {
+  background: #fff;
+  opacity: 0.9;
 }
 
 .cookie-modal-actions {
@@ -1439,6 +1446,17 @@ nav.scrolled {
 }
 [data-theme="light"] .toggle-switch input:checked + .toggle-slider::before {
   background: #fff;
+}
+
+/* Reserve space for cookie banner to prevent CLS */
+body {
+  padding-bottom: 80px;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 120px;
+  }
 }
 
 /* Cookie consent responsive */
