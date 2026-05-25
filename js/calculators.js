@@ -5,26 +5,6 @@
    =========================== */
 
 // ===========================
-// Toast Notification System
-// ===========================
-
-function showToast(message, type = 'info') {
-  const container = document.getElementById('toast-container');
-  if (!container) return;
-  
-  const toast = document.createElement('div');
-  toast.className = 'toast toast-' + type;
-  const icons = { success: '\u2713', error: '\u2715', info: '\u25CF' };
-  toast.innerHTML = '<span>' + (icons[type] || '\u25CF') + '</span> ' + message;
-  container.appendChild(toast);
-  
-  setTimeout(function() {
-    toast.classList.add('removing');
-    setTimeout(function() { toast.remove(); }, 250);
-  }, 3000);
-}
-
-// ===========================
 // Animated Number Counter
 // ===========================
 
@@ -960,26 +940,6 @@ function changeCurrency(code) {
 }
 
 // ===========================
-// Mobile Drawer Navigation
-// ===========================
-
-function toggleMobileMenu() {
-  var drawer = document.getElementById('mobileDrawer');
-  var overlay = document.getElementById('drawerOverlay');
-  drawer.classList.toggle('open');
-  overlay.classList.toggle('active');
-  document.body.style.overflow = drawer.classList.contains('open') ? 'hidden' : '';
-}
-
-function closeMobileDrawer() {
-  var drawer = document.getElementById('mobileDrawer');
-  var overlay = document.getElementById('drawerOverlay');
-  if (drawer) drawer.classList.remove('open');
-  if (overlay) overlay.classList.remove('active');
-  document.body.style.overflow = '';
-}
-
-// ===========================
 // Section Navigation
 // ===========================
 
@@ -1032,31 +992,6 @@ function showSection(sectionId) {
 }
 
 // ===========================
-// FAQ Accordion
-// ===========================
-
-function toggleFAQ(btn) {
-  var item = btn.closest('.faq-item');
-  if (!item) return;
-  
-  // Close all other FAQs in same section
-  var parent = item.closest('.faq-section');
-  if (parent) {
-    parent.querySelectorAll('.faq-item.active').forEach(function(el) {
-      if (el !== item) {
-        el.classList.remove('active');
-        var q = el.querySelector('.faq-question');
-        if (q) q.setAttribute('aria-expanded', 'false');
-      }
-    });
-  }
-  
-  var isActive = item.classList.contains('active');
-  item.classList.toggle('active');
-  btn.setAttribute('aria-expanded', String(!isActive));
-}
-
-// ===========================
 // Floating Action Button (FAB)
 // ===========================
 
@@ -1072,64 +1007,13 @@ function scrollToCalculator() {
 
 
 // ===========================
-// Section Reveal on Scroll
+// Theme Toggle (with chart redraw)
 // ===========================
 
-function setupSectionReveal() {
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('revealed');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-  document.querySelectorAll('.reveal-section').forEach(function(el) { observer.observe(el); });
-}
-
-// ===========================
-// FAB Visibility Control
-// ===========================
-
-function setupFABVisibility() {
-  var fab = document.getElementById('fab-button');
-  if (!fab) return;
-
-  var hero = document.querySelector('.hero');
-  if (!hero) return;
-  
-  var heroHeight = hero.offsetHeight;
-  
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > heroHeight) {
-      fab.classList.add('visible');
-    } else {
-      fab.classList.remove('visible');
-    }
-  }, { passive: true });
-}
-
-// ===========================
-// Theme Toggle
-// ===========================
-
-function toggleTheme() {
-  var html = document.documentElement;
-  var current = html.getAttribute('data-theme');
-  var newTheme = current === 'light' ? '' : 'light';
-  
-  if (newTheme === 'light') {
-    html.setAttribute('data-theme', 'light');
-    localStorage.setItem('tt-theme', 'light');
-  } else {
-    html.removeAttribute('data-theme');
-    localStorage.setItem('tt-theme', 'dark');
-  }
-  
-  // Update toggle button icons if needed (CSS handles display)
-  updateThemeMeta(newTheme);
-  
+// Extend theme toggle to redraw charts when theme changes
+var origToggleTheme = toggleTheme;
+toggleTheme = function() {
+  origToggleTheme();
   // Redraw charts to match new theme
   setTimeout(function() {
     var compoundingSection = document.getElementById('section-compounding');
@@ -1141,35 +1025,7 @@ function toggleTheme() {
       calcOptionPayoff();
     }
   }, 50);
-}
-
-function updateThemeMeta(theme) {
-  var meta = document.querySelector('meta[name="theme-color"]');
-  if (meta) {
-    meta.content = theme === 'light' ? '#f0f2f5' : '#060a15';
-  }
-}
-
-function applySavedTheme() {
-  var saved = localStorage.getItem('tt-theme');
-  if (saved === 'light') {
-    document.documentElement.setAttribute('data-theme', 'light');
-    updateThemeMeta('light');
-  } else if (saved === 'dark') {
-    document.documentElement.removeAttribute('data-theme');
-    updateThemeMeta('dark');
-  } else {
-    // Check system preference
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-      document.documentElement.setAttribute('data-theme', 'light');
-      localStorage.setItem('tt-theme', 'light');
-      updateThemeMeta('light');
-    }
-  }
-}
-
-// Apply theme before DOM paints to prevent flash
-applySavedTheme();
+};
 
 // ===========================
 // Live Calculation Triggers
@@ -1242,13 +1098,6 @@ document.addEventListener('DOMContentLoaded', function() {
   if (overlay) {
     overlay.addEventListener('click', closeMobileDrawer);
   }
-
-  // ---- FAQ setup ----
-  document.querySelectorAll('.faq-question').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      toggleFAQ(this);
-    });
-  });
 
   // ---- Section reveal on scroll ----
   setupSectionReveal();

@@ -40,6 +40,30 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- New: AI & Algorithmic Trading -->
+  <url>
+    <loc>https://tradingtoolkit.online/blog/ai-algorithmic-trading.html</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- New: Options Trading Strategies -->
+  <url>
+    <loc>https://tradingtoolkit.online/blog/options-trading-strategies.html</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- New: Portfolio Diversification Guide -->
+  <url>
+    <loc>https://tradingtoolkit.online/blog/portfolio-diversification-guide.html</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- About Page -->
   <url>
     <loc>https://tradingtoolkit.online/about.html</loc>
