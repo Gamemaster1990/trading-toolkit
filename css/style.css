@@ -1992,6 +1992,42 @@ footer::before {
   line-height: 1.6;
 }
 
+.footer-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  color: var(--accent-cyan);
+  border-color: var(--border-glass-hover);
+  background: rgba(0, 212, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+[data-theme="light"] .footer-social a {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+[data-theme="light"] .footer-social a:hover {
+  background: rgba(0, 212, 255, 0.1);
+  color: var(--accent-blue);
+}
+
 .footer-col h5 {
   font-size: 0.78rem;
   font-weight: 600;
