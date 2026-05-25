@@ -294,10 +294,10 @@ if (document.readyState === 'loading') {
 }
 
 // ===========================
-// DOMContentLoaded: Shared Setup
+// Shared Initialization
 // ===========================
 
-document.addEventListener('DOMContentLoaded', function() {
+function initShared() {
   // Close drawer on overlay click
   var overlay = document.getElementById('drawerOverlay');
   if (overlay) {
@@ -333,4 +333,11 @@ document.addEventListener('DOMContentLoaded', function() {
       // Page-specific resize handlers can be added here
     }, 300);
   });
-});
+}
+
+// Run init once DOM is ready (works even if DOMContentLoaded already fired)
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initShared);
+} else {
+  initShared();
+}
