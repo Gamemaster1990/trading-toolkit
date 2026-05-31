@@ -13,7 +13,7 @@
   <!-- Blog Home -->
   <url>
     <loc>https://tradingtoolkit.online/blog.html</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-05-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -76,6 +76,46 @@
   <url>
     <loc>https://tradingtoolkit.online/blog/day-trading-vs-swing-trading.html</loc>
     <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- New: AI Stocks Screening Guide -->
+  <url>
+    <loc>https://tradingtoolkit.online/blog/ai-stocks-screening-guide.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- New: Interest Rate Trading Strategies -->
+  <url>
+    <loc>https://tradingtoolkit.online/blog/interest-rate-trading-strategies.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- New: Real World Assets (RWA) Guide -->
+  <url>
+    <loc>https://tradingtoolkit.online/blog/real-world-assets-crypto-guide.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- New: Macro Algorithmic Trading System -->
+  <url>
+    <loc>https://tradingtoolkit.online/blog/macro-algorithmic-trading-system.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- New: Stablecoin vs Treasury Yields -->
+  <url>
+    <loc>https://tradingtoolkit.online/blog/stablecoin-vs-treasury-yields.html</loc>
+    <lastmod>2026-05-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
