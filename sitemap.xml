@@ -120,6 +120,46 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- New: Quantum Computing in Finance -->
+  <url>
+    <loc>https://tradingtoolkit.online/blog/quantum-computing-finance.html</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- New: AI Risk Management Trading -->
+  <url>
+    <loc>https://tradingtoolkit.online/blog/ai-risk-management-trading.html</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- New: CBDC Trading Guide -->
+  <url>
+    <loc>https://tradingtoolkit.online/blog/cbdc-trading-guide.html</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- New: ESG Sustainable Trading -->
+  <url>
+    <loc>https://tradingtoolkit.online/blog/esg-sustainable-trading.html</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- New: DeFi 2.0 Regulated Finance -->
+  <url>
+    <loc>https://tradingtoolkit.online/blog/defi-2-0-regulated-finance.html</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- About Page -->
   <url>
     <loc>https://tradingtoolkit.online/about.html</loc>
