@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn how to hedge your portfolio with options strategies in 2026. From protective puts and covered calls to collars and put spreads — a practical guide for retail investors.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#060a15">
+  <meta name="google-site-verification" content="3B3KYvbZZNgEGQF-L-8rWtp6traTQSEcM5hdIyr6Alw" />
+
+  <link rel="canonical" href="https://tradingtoolkit.online/blog/portfolio-hedging-options.html">
+
+  <meta property="og:title" content="Portfolio Hedging with Options: Protecting Your Portfolio in Volatile Markets">
+  <meta property="og:description" content="Learn how to hedge your portfolio with options strategies in 2026. From protective puts and covered calls to collars and put spreads — a practical guide.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://tradingtoolkit.online/blog/portfolio-hedging-options.html">
+  <meta property="og:site_name" content="Trading Toolkit">
+  <meta property="og:image" content="https://tradingtoolkit.online/og-image.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Portfolio Hedging with Options: Protecting Your Portfolio in Volatile Markets">
+  <meta name="twitter:description" content="Learn how to hedge your portfolio with options strategies in volatile markets.">
+  <meta name="twitter:image" content="https://tradingtoolkit.online/og-image.png">
+
+  <title>Portfolio Hedging with Options: Protecting Your Portfolio in Volatile Markets | Trading Toolkit</title>
+
+  <!-- Preconnect & resource hints -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=optional">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=optional" rel="stylesheet"></noscript>
+  <link rel="preload" as="style" href="../css/style.min.css">
+  <link rel="stylesheet" href="../css/style.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="../css/style.min.css"></noscript>
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Portfolio Hedging with Options: Protecting Your Portfolio in Volatile Markets",
+    "description": "Learn how to hedge your portfolio with options strategies in 2026. From protective puts and covered calls to collars and put spreads — a practical guide for retail investors.",
+    "author": {"@type": "Person", "name": "Himanshu Kathuria"},
+    "publisher": {"@type": "Organization", "name": "Trading Toolkit", "url": "https://tradingtoolkit.online/"},
+    "datePublished": "2026-06-14",
+    "url": "https://tradingtoolkit.online/blog/portfolio-hedging-options.html"
+  }
+  </script>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8228373593966913" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="animated-bg" aria-hidden="true"><div class="orb"></div><div class="orb"></div><div class="orb"></div><div class="orb"></div></div>
+  <div class="grid-overlay" aria-hidden="true"></div>
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand"><img src="../favicon-32x32.png" alt="TT" class="logo-icon"> Trading Toolkit</a>
+      <button class="theme-toggle-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+        <svg class="sun-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg class="moon-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#tools-overview">Tools</a></li>
+        <li><a href="../blog.html" class="active">Blog</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="drawerOverlay" class="mobile-drawer-overlay" onclick="closeMobileDrawer()"></div>
+  <div id="mobileDrawer" class="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <img src="../favicon-32x32.png" alt="TT" class="logo-icon">
+      <button class="mobile-drawer-close" onclick="closeMobileDrawer()" aria-label="Close menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <ul class="mobile-drawer-links">
+      <li><a href="../index.html">&#x1F3E0; Home</a></li>
+      <li><a href="../blog.html" class="active">&#x1F4DD; Blog</a></li>
+      <li><a href="../about.html">&#x2139;&#xFE0F; About Us</a></li>
+      <li><a href="../contact.html">&#x1F4EC; Contact</a></li>
+    </ul>
+    <div class="mobile-drawer-footer">
+      <button class="theme-toggle-btn drawer-theme-btn" onclick="toggleTheme()"><span class="sun-text">Light Mode</span><span class="moon-text">Dark Mode</span></button>
+      <p style="color:var(--text-muted);font-size:0.8rem;padding:0 16px;">&copy; 2026 Trading Toolkit</p>
+    </div>
+  </div>
+
+  <div id="toast-container" class="toast-container"></div>
+
+  <div class="page-content">
+    <div class="container">
+      <a href="../blog.html" class="page-back">&#x2190; Back to Blog</a>
+      <div class="blog-article-header">
+        <div class="blog-article-tags">
+          <span class="tool-tag gold">Options</span>
+          <span class="tool-tag purple">Advanced</span>
+        </div>
+        <h1>Portfolio Hedging with Options: Protecting Your Portfolio in Volatile Markets</h1>
+        <div class="blog-article-meta">
+          <span>By Himanshu Kathuria</span>
+          <span>&#x2022;</span>
+          <span>June 2026</span>
+          <span>&#x2022;</span>
+          <span>12 min read</span>
+        </div>
+      </div>
+
+      <div class="blog-article-content">
+        <h2>Why Hedge? The Case for Portfolio Protection</h2>
+        <p>In the 2026 market environment — characterized by elevated interest rates, geopolitical uncertainty, and sector rotation — portfolio hedging is no longer optional for serious investors. The days of easy money and low volatility are behind us. Market drawdowns are sharper, recoveries are choppier, and traditional buy-and-hold strategies need complementary protection.</p>
+        <p>Options provide the most versatile and cost-effective tools for hedging a portfolio. Whether you own a concentrated stock position, a diversified ETF portfolio, or individual equities, there's an options strategy that can protect your downside while allowing upside participation.</p>
+
+        <div class="tip-box">
+          <strong>&#x1F4A1; Key Insight:</strong> Think of hedging like insurance. You buy insurance on your house not because you expect it to burn down, but because if it does, the financial impact would be devastating. Options hedging works the same way — it protects against the portfolio-destroying events that you hope never happen.
+        </div>
+
+        <h2>Understanding the Key Option Greeks for Hedging</h2>
+        <p>Before diving into specific strategies, it's important to understand the option Greeks that matter most for hedging:</p>
+        <ul>
+          <li><strong>Delta (&#x394;):</strong> Measures how much the option price changes per $1 move in the underlying. Put options have negative delta (they increase in value when the stock falls).</li>
+          <li><strong>Gamma (&#x393;):</strong> Measures the rate of change of delta. Important for understanding how your hedge's sensitivity changes as the market moves.</li>
+          <li><strong>Theta (&#x398;):</strong> Time decay. Options lose value over time. Hedging costs money through theta decay — you're paying for protection.</li>
+          <li><strong>Vega (&#x3bd;):</strong> Sensitivity to implied volatility. In volatile markets, options are more expensive. Vega matters because volatility spikes during market selloffs — your hedges become more valuable when you need them most.</li>
+        </ul>
+
+        <h2>Hedging Strategy 1: Protective Puts (The Classic)</h2>
+        <p>A protective put is the simplest and most intuitive hedging strategy. You buy a put option on a stock you own, giving you the right to sell that stock at a specific price (the strike) until the option expires.</p>
+
+        <h3>How It Works</h3>
+        <p>If you own 100 shares of a stock trading at $100 and buy a 3-month $90 put for $2 per share ($200 total), you've insured your position against a decline below $90. If the stock falls to $80, your stock loses $2,000 but your put option is now worth at least $1,000 ($90 - $80 x 100 shares), offsetting half of the loss.</p>
+
+        <h3>Choosing the Right Strike and Expiration</h3>
+        <ul>
+          <li><strong>Strike Price:</strong> Out-of-the-money puts (10-15% below the current price) offer a good balance between cost and protection. The further OTM, the cheaper the put, but the more downside you must absorb before protection kicks in.</li>
+          <li><strong>Expiration:</strong> Choose an expiration that aligns with your holding period. For long-term holdings, consider rolling 3-month puts every quarter. Rolling strikes a balance between cost and continuous protection.</li>
+        </ul>
+
+        <h2>Hedging Strategy 2: Covered Calls (Income + Partial Protection)</h2>
+        <p>A covered call involves selling a call option against shares you already own. You collect premium income in exchange for capping your upside at the strike price. This is not a pure hedging strategy, but it provides a small buffer against declines through the premium collected.</p>
+
+        <h3>Best Used When</h3>
+        <ul>
+          <li>You own a stock with a neutral-to-slightly bullish outlook</li>
+          <li>You're willing to cap upside in exchange for regular income</li>
+          <li>You want to generate yield in a sideways or slightly rising market</li>
+        </ul>
+
+        <h3>Example</h3>
+        <p>You own 100 shares of a stock at $100. You sell a $105 call expiring in 30 days for $1.50 per share ($150).</p>
+        <ul>
+          <li><strong>Best case:</strong> Stock stays below $105. You keep the $150 premium and your shares.</li>
+          <li><strong>If stock rallies above $105:</strong> Your shares get called away at $105, capping your gain at $5 per share plus the $1.50 premium.</li>
+          <li><strong>If stock falls:</strong> The $1.50 premium offsets a $1.50 decline, giving you partial downside protection.</li>
+        </ul>
+
+        <h2>Hedging Strategy 3: Collars (The All-in-One Hedge)</h2>
+        <p>A collar combines a protective put (which you buy) with a covered call (which you sell). The premium from the call offsets the cost of the put, making this a low-cost or even zero-cost hedging strategy.</p>
+
+        <h3>How to Construct a Collar</h3>
+        <p>For a stock at $100:</p>
+        <ol>
+          <li>Buy a $90 put (protects against decline below $90)</li>
+          <li>Sell a $115 call (caps upside above $115)</li>
+          <li>The premium from the call ideally covers the cost of the put</li>
+        </ol>
+
+        <h3>Outcome</h3>
+        <ul>
+          <li><strong>Stock below $90:</strong> Put protects you. You can sell at $90.</li>
+          <li><strong>Stock between $90 and $115:</strong> Both options expire worthless. You keep the full gain/loss.</li>
+          <li><strong>Stock above $115:</strong> You're obligated to sell at $115. Your gain is capped.</li>
+        </ul>
+
+        <p>Collars are ideal for concentrated stock positions where you want protection but are willing to sacrifice some upside to get it for free (or very cheaply).</p>
+
+        <h2>Hedging Strategy 4: Index Put Spreads (Portfolio-Level Protection)</h2>
+        <p>If you own a diversified portfolio, hedging individual positions is inefficient. Instead, use index put spreads — buying puts on the S&P 500 (SPY) or Nasdaq (QQQ) — to protect your entire portfolio.</p>
+
+        <h3>Bear Put Spread Example</h3>
+        <p>To hedge a $100,000 stock portfolio:</p>
+        <ul>
+          <li>Buy 1 SPY $500 put (expiring in 3 months) — cost $8.00 ($800)</li>
+          <li>Sell 1 SPY $480 put (same expiration) — receive $4.00 ($400)</li>
+          <li><strong>Net cost:</strong> $400 for a $2,000 of protection (the $500 to $480 range)</li>
+        </ul>
+
+        <p>This structure limits your maximum hedge cost while still providing meaningful protection against a 4%+ market decline. The trade-off is that protection stops at $480, so a severe crash beyond that level is only partially hedged.</p>
+
+        <div class="tip-box">
+          <strong>&#x1F4A1; Pro Tip:</strong> Use our <a href="../index.html#section-option-payoff" style="color:var(--accent-cyan);">Option Payoff Chart</a> to visualize any hedging strategy before executing it. Plot the exact strikes and expirations to see your precise profit/loss at different price levels. This is especially important for multi-leg strategies like collars and spreads.
+        </div>
+
+        <h2>Hedging Strategy 5: VIX Call Options (Tail Risk Protection)</h2>
+        <p>For sophisticated investors, VIX call options provide pure tail-risk protection. The CBOE Volatility Index (VIX) tends to spike during market crashes, so owning VIX calls can generate large profits during market dislocations that offset portfolio losses.</p>
+
+        <h3>How VIX Hedging Works</h3>
+        <ul>
+          <li>Buy VIX call options with strikes 20-50% above the current VIX level</li>
+          <li>Use short-term expirations (1-2 months) and roll them regularly</li>
+          <li>Accept that you'll lose the premium most of the time — this is pure insurance</li>
+        </ul>
+
+        <p><strong>Warning:</strong> VIX options are complex instruments with significant negative roll yield. They are best used by experienced options traders who understand the nuances of volatility products.</p>
+
+        <h2>Cost-Benefit Analysis of Hedging</h2>
+        <p>Hedging is not free. Understanding the costs is critical to making informed decisions:</p>
+
+        <h3>Direct Costs</h3>
+        <ul>
+          <li><strong>Premium Paid:</strong> The cost of buying puts or call spreads</li>
+          <li><strong>Opportunity Cost:</strong> If the market rallies, your hedge premium is lost</li>
+          <li><strong>Rolling Costs:</strong> Continuously rolling hedges incurs transaction costs and time decay</li>
+        </ul>
+
+        <h3>Indirect Benefits</h3>
+        <ul>
+          <li><strong>Sleep Better:</strong> Hedged portfolios allow investors to stay invested during corrections</li>
+          <li><strong>Stay Disciplined:</strong> Without hedges, investors often sell at market bottoms out of fear</li>
+          <li><strong>Tax Efficiency:</strong> Hedging can help defer capital gains taxes by avoiding the need to sell positions</li>
+        </ul>
+
+        <h2>Building Your Hedging Plan</h2>
+        <p>A comprehensive hedging plan answers these questions before you implement any strategy:</p>
+
+        <ol>
+          <li><strong>What are you protecting?</strong> A concentrated stock, a diversified portfolio, or a specific market exposure?</li>
+          <li><strong>How much protection do you need?</strong> Full protection for the entire portfolio, or partial protection against catastrophic losses?</li>
+          <li><strong>What's your budget?</strong> How much are you willing to pay per year for protection? A rule of thumb is 0.5-2% of portfolio value annually.</li>
+          <li><strong>What's your time horizon?</strong> Are you hedging for a specific event (earnings, election) or permanently?</li>
+          <li><strong>When will you adjust?</strong> Set rules for when to roll, adjust strikes, or remove hedges based on market conditions.</li>
+        </ol>
+
+        <div class="tip-box">
+          <strong>&#x1F4A1; Pro Tip:</strong> Use our <a href="../index.html#section-risk-reward" style="color:var(--accent-cyan);">Risk/Reward Calculator</a> to evaluate the cost-effectiveness of different hedging strategies. Compare the cost of a protective put vs. a put spread vs. a collar to find the best balance of protection and cost for your specific situation.
+        </div>
+
+        <h2>Common Hedging Mistakes</h2>
+
+        <h3>1. Over-Hedging</h3>
+        <p>Buying too much protection can significantly drag on portfolio returns. If you're spending 3-4% of portfolio value annually on hedges, that's a meaningful drag that requires careful consideration.</p>
+
+        <h3>2. Under-Hedging</h3>
+        <p>Buying too many out-of-the-money options that never provide meaningful protection is equally problematic. A put with a strike 30% below the current price provides almost no protection in a 10-15% correction.</p>
+
+        <h3>3. Letting Hedges Expire Worthless</h3>
+        <p>If you buy 3-month puts and the market doesn't decline, the puts expire worthless. That's fine — it's insurance you didn't need. But don't let this pattern cause you to abandon hedging right before a correction hits.</p>
+
+        <h3>4. Hedging Without a Plan</h3>
+        <p>Randomly buying options based on fear or headlines leads to poor results. Stick to your plan through market noise.</p>
+
+        <h2>Conclusion: Hedge Smart, Not Hard</h2>
+        <p>Portfolio hedging with options is a powerful tool for managing risk in the volatile 2026 market environment. The key is to match the strategy to your specific needs: protective puts for concentrated positions, covered calls for income, collars for cost-effective protection, and index put spreads or VIX options for portfolio-level hedging.</p>
+        <p>Start simple. Begin with protective puts or covered calls on your largest positions. As you gain experience, layer in more sophisticated strategies. Always use our <a href="../index.html#section-option-payoff" style="color:var(--accent-cyan);">Option Payoff Chart</a> to visualize your hedges before executing them.</p>
+        <p>Remember: <strong>The goal of hedging isn't to make money — it's to stay in the game long enough to profit from your best ideas.</strong></p>
+
+        <hr style="border-color:var(--border-glass);margin:32px 0;">
+
+        <h2>Related Tools &amp; Articles</h2>
+        <div class="related-links">
+          <a href="../index.html#section-option-payoff" class="related-link">&#x1F4CA; Option Payoff Chart</a>
+          <a href="../index.html#section-risk-reward" class="related-link">&#x2696;&#xFE0F; Risk/Reward Calculator</a>
+          <a href="../index.html#section-position-size" class="related-link">&#x1F4D0; Position Size Calculator</a>
+          <a href="../blog/options-trading-strategies.html" class="related-link">&#x1F4B0; Options Trading Strategies</a>
+          <a href="../blog/stop-loss-strategies.html" class="related-link">&#x1F6D1; Stop Loss Strategies</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4><span style="display:inline-flex;width:28px;height:28px;background:var(--gradient-primary);border-radius:6px;align-items:center;justify-content:center;font-size:0.8rem;color:#fff;font-weight:800;">TT</span> Trading Toolkit</h4>
+          <p>Free trading calculators and educational tools.</p>
+          <div class="last-updated-badge">&#x1F4C5; June 2026</div>
+          <div class="footer-social">
+            <a href="https://x.com/cryptolivespace" target="_blank" rel="noopener noreferrer" aria-label="Follow on X / Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/himanshu-kathuria19" target="_blank" rel="noopener noreferrer" aria-label="Connect on LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/cryptolive2026/" target="_blank" rel="noopener noreferrer" aria-label="Follow on Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Tools</h5>
+          <a href="../index.html">Home</a>
+          <a href="../index.html#tools-overview">All Tools</a>
+        </div>
+        <div class="footer-col">
+          <h5>Resources</h5>
+          <a href="../blog.html">Blog</a>
+          <a href="../about.html">About Us</a>
+          <a href="../contact.html">Contact</a>
+          <a href="../disclaimer.html">Disclaimer</a>
+        </div>
+        <div class="footer-col">
+          <h5>Legal</h5>
+          <a href="../privacy-policy.html">Privacy Policy</a>
+          <a href="../terms.html">Terms of Use</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Trading Toolkit. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js').catch(function(err) {
+          console.log('SW registration failed: ', err);
+        });
+      });
+    }
+  </script>
+
+  <script src="../js/config.min.js"></script>
+  <script src="../js/shared.min.js"></script>
+  <script src="../js/calculators.min.js"></script>
+
+  <div id="cookie-consent-banner" class="cookie-consent-overlay" role="dialog" aria-label="Cookie consent">
+    <div class="cookie-consent-inner">
+      <div class="cookie-consent-text">
+        <p>We use cookies to enhance your experience and show personalized ads. By clicking "Accept All", you consent to our use of cookies. See our <a href="../privacy-policy.html">Privacy Policy</a> for details.</p>
+      </div>
+      <div class="cookie-consent-actions">
+        <button class="cookie-btn cookie-btn-reject" onclick="rejectAllCookies()">Reject All</button>
+        <button class="cookie-btn cookie-btn-accept" onclick="acceptAllCookies()">Accept All</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="cookie-preferences-modal" class="cookie-modal-overlay">
+    <div class="cookie-modal">
+      <h3>Cookie Preferences</h3>
+      <p>Customize your cookie settings.</p>
+      <div class="cookie-preference">
+        <div>
+          <div class="cookie-preference-label">Essential Cookies</div>
+          <div class="cookie-preference-desc">Required for basic functionality</div>
+        </div>
+        <label class="toggle-switch"><input type="checkbox" checked disabled><span class="toggle-slider"></span></label>
+      </div>
+      <div class="cookie-preference">
+        <div>
+          <div class="cookie-preference-label">Advertising Cookies</div>
+          <div class="cookie-preference-desc">Used by Google AdSense</div>
+        </div>
+        <label class="toggle-switch"><input type="checkbox" id="cookie-ad-storage" checked><span class="toggle-slider"></span></label>
+      </div>
+      <div class="cookie-preference">
+        <div>
+          <div class="cookie-preference-label">Personalized Ads</div>
+          <div class="cookie-preference-desc">Relevant ads based on interests</div>
+        </div>
+        <label class="toggle-switch"><input type="checkbox" id="cookie-ad-personalization"><span class="toggle-slider"></span></label>
+      </div>
+      <div class="cookie-modal-actions">
+        <button class="btn btn-secondary" onclick="rejectAllCookies()">Reject All</button>
+        <button class="btn btn-primary" onclick="saveCookiePreferences()">Save Preferences</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function(){dataLayer.push(arguments);};
+
+      var _loaded = false;
+      function _loadDeferred() {
+        if (_loaded) return;
+        _loaded = true;
+
+        var ga = document.createElement('script');
+        ga.async = true;
+        ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-G5E46P21Z6';
+        document.head.appendChild(ga);
+
+        gtag('js', new Date());
+        gtag('config', 'G-G5E46P21Z6');
+
+        ['scroll','mousedown','touchstart','keydown','wheel'].forEach(function(e) {
+          window.removeEventListener(e, _loadDeferred);
+        });
+      }
+
+      ['scroll','mousedown','touchstart','keydown','wheel'].forEach(function(e) {
+        window.addEventListener(e, _loadDeferred, { once: true, passive: true });
+      });
+
+      setTimeout(_loadDeferred, 10000);
+    })();
+  </script>
+
+</body>
+</html>

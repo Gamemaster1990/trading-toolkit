@@ -160,6 +160,46 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- New: Sector Rotation 2026 -->
+  <url>
+    <loc>https://tradingtoolkit.online/blog/sector-rotation-2026.html</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- New: Dividend Investing 2026 -->
+  <url>
+    <loc>https://tradingtoolkit.online/blog/dividend-investing-2026.html</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- New: Higher-for-Longer Interest Rates -->
+  <url>
+    <loc>https://tradingtoolkit.online/blog/higher-for-longer-interest-rates.html</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- New: AI Infrastructure Investing -->
+  <url>
+    <loc>https://tradingtoolkit.online/blog/ai-infrastructure-investing.html</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- New: Portfolio Hedging with Options -->
+  <url>
+    <loc>https://tradingtoolkit.online/blog/portfolio-hedging-options.html</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- About Page -->
   <url>
     <loc>https://tradingtoolkit.online/about.html</loc>
